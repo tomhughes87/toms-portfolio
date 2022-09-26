@@ -7,6 +7,7 @@ import icontime from "./icons/icon-time.png"
 import icontesting from "./icons/icon-testing.png";
 import iconppl from "./icons/icon-ppl.png";
 import icondesktopmobile from "./icons/icon-desktop-mobile.png";
+
 // import * from "./previews";
 
 // const myImages:any ={};
