@@ -1,0 +1,162 @@
+[
+  {
+    "BG_color":"#719588",
+    "LeftPanel": {
+      "TechUsed": [
+        "React",
+        "Jest",
+        "CSS",
+        "HTML",
+        "Typescript",
+        "Git",
+        "GitHub",
+        "Netlify"
+      ],
+      "Link": "https://pirate-ship-name-gen.netlify.app/",
+      "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
+    },
+    "FrontCard": {
+      "Title": "Pirate Ship Name Generator",
+      "Preview": "./prevNameGen.png"
+    },
+    "BackCard": {
+      "Description": "This site randomly generates pirate ship names.",
+      "Stats": {
+        "Devs": "1",
+        "Days": "3",
+        "Testing": "82%",
+        "Responsive": "Yes"
+      }
+    }
+  },
+  
+  {
+    "BG_color":"#FFB6CC",
+    "LeftPanel": {
+      "TechUsed": [
+        "React",
+        "Jest",
+        "CSS",
+        "HTML",
+        "Javascript",
+        "Git",
+        "GitHub",
+        "Netlify"
+      ],
+      "Link": "https://pirate-ship-name-gen.netlify.app/",
+      "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
+    },
+    "FrontCard": {
+      "Title": "IceCream Shop",
+      "Preview": "./prevIcecream.png"
+    },
+    "BackCard": {
+      "Description": "This site allows users to order icecreams and pay using shopify.",
+      "Stats": {
+        "Devs": "1",
+        "Days": "5",
+        "Testing": "90%",
+        "Responsive": "Yes"
+      }
+    }
+  },
+  
+  {
+    "BG_color":"#0093AB",
+    "LeftPanel": {
+      "TechUsed": [
+        "HTML",
+        "CSS",
+        ".js",
+        "MongoDB",
+        "Docker",
+        "Git",
+        "Jest",
+        "GitHub",
+        "Netlify & Heroku"
+      ],
+      "Link": "https://pirate-ship-name-gen.netlify.app/",
+      "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
+    },
+    "FrontCard": {
+      "Title": "Rabbit-Habits",
+      "Preview": "./prevToDo.png"
+    },
+    "BackCard": {
+      "Description": "This site allows users to order icecreams and pay using shopify.",
+      "Stats": {
+        "Devs": "4",
+        "Days": "4",
+        "Testing": "84%",
+        "Responsive": "Mobile"
+      }
+    }
+  },
+
+  {
+    "BG_color":"#4f7e89",
+    "LeftPanel": {
+      "TechUsed": [
+        "HTML",
+        "CSS",
+        ".js",
+        "Postgres",
+        "React",
+        "Redux",
+        "Git",
+        "Docker",
+        "Jest"
+      ],
+      "Link": "https://quiznado.netlify.app/",
+      "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
+    },
+    "FrontCard": {
+      "Title": "Quiz-Nado",
+      "Preview": "./prevQuiz.png"
+    },
+    "BackCard": {
+      "Description": "This site allows users to order icecreams and pay using shopify.",
+      "Stats": {
+        "Devs": "5",
+        "Days": "4",
+        "Testing": "65%",
+        "Responsive": "Desktop"
+      }
+    }
+  },
+
+
+  {
+    "BG_color":"rgb(134, 88, 106)",
+    "LeftPanel": {
+      "TechUsed": [
+        "HTML",
+        "CSS",
+        "Typescript",
+        "React",
+        "Git",
+        "GitHub",
+        "Jest",
+        "Netlify"
+      ],
+      "Link": "https://quiznado.netlify.app/",
+      "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
+    },
+    "FrontCard": {
+      "Title": "Portfolio (this)",
+      "Preview": "./prevIcecream.png"
+    },
+    "BackCard": {
+      "Description": "This site allows users to order icecreams and pay using shopify.",
+      "Stats": {
+        "Devs": "1",
+        "Days": "6",
+        "Testing": "65%",
+        "Responsive": "Yes"
+      }
+    }
+  }
+
+
+
+]
