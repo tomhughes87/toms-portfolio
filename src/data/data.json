@@ -158,7 +158,7 @@
   },
 
   {
-    "BG_color":"#000",
+    "BG_color":"rgb(26 26 26)",
     "LeftPanel": {
       "TechUsed": [
         "React",
