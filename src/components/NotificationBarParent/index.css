@@ -1,0 +1,76 @@
+:root {
+    --BannerHeight: 50px;
+    
+  }
+
+#NotificationBarContainer{
+background-color: rgb(50, 49, 57);
+width: 100%;
+height: var(--BannerHeight);
+position: sticky;
+top: 0px;
+display: flex;
+align-content: center;
+justify-content: center;
+z-index: 10;
+}
+
+#NotificationBarText{
+    font-weight: 700;
+    line-height: var(--BannerHeight);
+    color: white;
+    font-size: large;
+    font-weight: 300;
+    font-family: 'Trebuchet MS', sans-serif;
+    align-self: center;
+    text-decoration: none;
+  }
+
+#NotificationBarCloseBtn{
+position: fixed;
+right: 15px;
+top: 4px;
+cursor: pointer;
+z-index: 15;
+width: 30px;
+height: 30px;
+}
+
+#NotificationBarCloseBtn p{
+    color: white;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 3px;
+    }
+
+.Disabled{
+  display: none;
+background-color:wheat;
+}
+      
+@media only screen and (max-width: 600px) {
+  #NotificationBarText{
+    font-size: large;
+}
+}
+
+@media only screen and (max-width: 450px) {
+  #NotificationBarText{
+    font-size: medium;
+}
+}
+
+@media only screen and (max-width: 420px) {
+  #NotificationBarText{
+    font-size: small  ;
+    /* here text should just go double spaced */
+}
+} 
+
+@media only screen and (max-width: 349px) {
+  #NotificationBarText{
+    font-size: x-small  ;
+}
+} 
