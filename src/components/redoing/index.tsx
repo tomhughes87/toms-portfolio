@@ -51,7 +51,7 @@ export default function ProjectIndiCardRedo(props:any) {
 
 
 
-  {/* <div className="profile-list"> */}
+  <div className="profile-list">
             {
               props.details?.map((stuff: projectCardsTypes) =>(
   
@@ -88,8 +88,8 @@ export default function ProjectIndiCardRedo(props:any) {
         {/* BACK OF CARD 1 */}
         <div className="more-info">
           
-          <div className="ProjCardDescContainer">
             <h1>Description & Stats</h1>
+          <div className="ProjCardDescContainer">
             <div className="coords">
               <span>
                {stuff.BackCard.Description}
@@ -151,7 +151,7 @@ export default function ProjectIndiCardRedo(props:any) {
             ))
           }
         
-       {/* </div>  */}
+       </div> 
 
     
     </>
