@@ -16,7 +16,7 @@
       "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
     },
     "FrontCard": {
-      "Title": "Pirate Ship Name Generator",
+      "Title": "Ship Name Generator",
       "Preview": "./prevNameGen.png"
     },
     "BackCard": {
@@ -155,8 +155,38 @@
         "Responsive": "Yes"
       }
     }
-  }
+  },
 
+  {
+    "BG_color":"#000",
+    "LeftPanel": {
+      "TechUsed": [
+        "React",
+        "Jest",
+        "CSS",
+        "HTML",
+        "Typescript",
+        "Git",
+        "GitHub",
+        "Netlify"
+      ],
+      "Link": "https://pirate-ship-name-gen.netlify.app/",
+      "GitHub": "https://github.com/tomhughes87/Pirate-Ship-Name-Gen"
+    },
+    "FrontCard": {
+      "Title": "GitHub Stats",
+      "Preview": "./prevNameGen.png"
+    },
+    "BackCard": {
+      "Description": "Search for a GitHub user name and see their stats. A short project where I practiced using css to do some cool animations.",
+      "Stats": {
+        "Devs": "1",
+        "Days": "3",
+        "Testing": "82%",
+        "Responsive": "Yes"
+      }
+    }
+  }
 
 
 ]
