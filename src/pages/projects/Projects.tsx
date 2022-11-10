@@ -16,7 +16,7 @@ export default function Projects() {
   return (
     <>
       {/* <div>Projects</div> */}
-      <p>hei</p>
+      {/* <p>hei</p> */}
       {/* <ProjectCards /> */}
       
 <br></br>
