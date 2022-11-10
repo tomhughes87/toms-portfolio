@@ -5,13 +5,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Aboutme from './pages/aboutme/Aboutme';
 import Contact from './pages/contact/Contact';
 import Projects from './pages/projects/Projects';
-import Skills from './pages/skills/Skills';
+import SkillsPage from './pages/skills/Index';
+import NotificationBarParent from './components/NotificationBarParent';
+import NavBar from './components/NavBar';
+import Skills from './components/Skills';
+import CvPage from './pages/cv';
 
 
 
 function App() {
   return (
-      <BrowserRouter>
+    <BrowserRouter>
+    
+    <NotificationBarParent/>
+    <NavBar/>
+    {/* <Skills/> */}
         <Routes>
           {/* <Route path="/" element={ />}> */}
             <Route index element={<Contact />} />
@@ -28,10 +36,13 @@ function App() {
             <Route path="contacts" element={<Contact />} />
             <Route path="contactme" element={<Contact />} />
 
-            <Route path="skills" element={<Skills />} />
-            <Route path="skill" element={<Skills />} />
-            <Route path="myskills" element={<Skills />} />
-            <Route path="myskill" element={<Skills />} />
+            <Route path="skills" element={<SkillsPage />} />
+            <Route path="skill" element={<SkillsPage />} />
+            <Route path="myskills" element={<SkillsPage />} />
+            <Route path="myskill" element={<SkillsPage />} />
+
+            <Route path="cv" element={<CvPage />} />
+
 
 
 
