@@ -1,0 +1,40 @@
+#container-hero{
+    /* background-color: yellow; */
+    /* background-image: url(./herobackground.jpg); */
+    /* background-image: url(./andrew-ridley-jR4Zf-riEjI-unsplash.jpg); */
+    /* background-image: url(./patrick-tomasso-QMDap1TAu0g-unsplash.jpg); */
+    /* background-image: url(./ray-mallick-5J1bHRX1fNw-unsplash.jpg); */
+    background-image: url(./patrick-fore-0gkw_9fy0eQ-unsplash.jpg);
+    background-position: center;
+    background-size: 100%;
+    padding: 40px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#text-hero{
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0);
+    mix-blend-mode: lighten;
+    /* border-radius: 50px; */
+    border-style: double;
+    border-color: rgb(0, 0, 0);
+    border-width: 10px;
+
+    /* background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    mix-blend-mode: darken; */
+
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    font-size: xxx-large;
+
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
