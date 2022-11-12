@@ -1,62 +1,101 @@
 #container-scroll-reveal{
-    /* background-color: tomato; */
-    height: fit-content;
+    height: 450px;
     display: flex;
     align-items: center;
     justify-content: center; 
     gap: 30px;
     overflow: hidden;
-
     margin-top: 20px;
 }
 
 .scroll-reveal-element {
-    transition: ease-in-out 2.5s;
+    transition: ease-in-out 1.5s;
     opacity: 0;  
-    height: 400px;
-    width: 340px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgb(77, 77, 77);
+}   
+
+#sub-container-scroll-reveal{
+    display: flex;
+    flex-direction: column;
 }
 
-.scroll-reveal-element img{
-    height: 100%;
-    border-radius: 15px;
-}
-
-.scroll-reveal-element p{
-    width: 100%;
-}
-
-#testing-text{
-    color: white;
+#sub-container-scroll-reveal p,h1 {
     height: fit-content;
+    padding: 0;
+    margin: 0;
+    width: 340px;
+}
 
+#sub-container-scroll-reveal img{
+    border-radius: 25px;
+    width: 340px;
+}
+
+#sub-container-scroll-reveal button{
+    border-radius: 25px;
+    align-self: flex-end;
+    background-color: aliceblue;
+    transition: 6s;
 }
 
 .left-scroll-reveal-start{
-transform: translateX(-320px) scale(120%);
 transform: translateX(-320px) ;
 text-align: right;
 }
 
 .right-scroll-reveal-start{
-    /* transform: translateX(320px) rotateZ(40deg); */
-    /* transform: translateX(320px) scale(170%); */
     transform: translateX(320px) ;
     text-align: left;
 }
 
-.show-right{
+.btn-reveal-start{
+    transform: translateX(150px); 
+    }
+
+.reveal{
     opacity: 1 !important;
-    /* transform: translateX(10px) rotateZ(0deg); */
-    transform: translateX(10px) scale(100%);
+    transform: translateX(10px) scale(100%) ;
 }
 
-.show-left{
-    opacity: 1 !important;
-    transform: translateX(10px) rotateZ(0deg);
-    transform: translateX(10px) scale(100%);
-}
 
+
+
+
+
+
+
+
+
+/* At 800, rescale the images */
+@media only screen and (max-width: 800px) {
+    /* For mobile phones: */
+    #sub-container-scroll-reveal p {
+      font-size: small;
+      width: 90%;
+      margin-right: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 690px) {
+    /* For mobile phones: */
+    #sub-container-scroll-reveal p {
+      width: 80%;
+      margin-right: 10px;
+    }
+  }
+
+  
+  @media only screen and (max-width: 60px) {
+    /* For mobile phones: */
+
+    }
+  
+
+
+#testdiv-length{
+    height: 2000px;
+    background-color: aliceblue;
+}
