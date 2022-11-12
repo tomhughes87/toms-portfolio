@@ -3,41 +3,39 @@ import "./style.css";
 import pic from "./patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
 
 export default function InfoPanel() {
-  function handleClick(e: any) {
-    const rightPanel = document.getElementById("rightpanel");
-    const leftPanel = document.getElementById("leftpanel");
+  // function handleClick(e: any) {
+  //   const rightPanel = document.getElementById("rightpanel");
+  //   const leftPanel = document.getElementById("img-scroll-reveal");
 
-    if (rightPanel?.classList.contains("show-right")) {
-      rightPanel?.classList.remove("show-right");
-      leftPanel?.classList.remove("show-left");
-    } else {
-      rightPanel?.classList.add("show-right");
-      leftPanel?.classList.add("show-left");
-    }
-  }
+  //   if (rightPanel?.classList.contains("show-right")) {
+  //     rightPanel?.classList.remove("show-right");
+  //     leftPanel?.classList.remove("show-left");
+  //   } else {
+  //     rightPanel?.classList.add("show-right");
+  //     leftPanel?.classList.add("show-left");
+  //   }
+  // }
 
   useEffect(() => {
-    let li: NodeListOf<HTMLElement> = document.querySelectorAll(
-      "#container-scroll-reveal"
-    );
+    // let li: NodeListOf<HTMLElement> = document.querySelectorAll(
+    //   "#container-scroll-reveal"
+    // );
+    let li: NodeListOf<HTMLElement> =
+      document.querySelectorAll(".observe-this");
     console.log(li);
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           console.log(entry.target);
-          entry.target.children[0].classList.toggle(
-            "show-right",
-            entry.isIntersecting
-          );
-          entry.target.children[1].classList.toggle(
-            "show-left",
-            entry.isIntersecting
-          );
+          console.log("THIS THING:", entry.target);
+
+          entry.target.classList.toggle("show-right", entry.isIntersecting);
+          // entry.target.classList.toggle("show-left", entry.isIntersecting);
         });
       },
       {
-        threshold: 0.3,
+        threshold: 0.8,
       }
     );
 
@@ -49,21 +47,56 @@ export default function InfoPanel() {
 
   return (
     <>
-      <div id="container-scroll-reveal" className="1">
-        <div
-          id="leftpanel"
-          className="scroll-reveal-element left-scroll-reveal-start "
-        >
-          <img id="img-scroll-reveal" src={pic} alt="" />
+      <div id="container-scroll-reveal">
+        <div>
+          <img
+            id="img-scroll-reveal"
+            className="scroll-reveal-element left-scroll-reveal-start observe-this"
+            src={pic}
+            alt=""
+          />
         </div>
 
-        <div
-          id="rightpanel"
-          className="scroll-reveal-element right-scroll-reveal-start "
-        >
-          <p>right InfoPanel</p>
+        <div>
+          <h1
+            id="testing-text"
+            className="scroll-reveal-element right-scroll-reveal-start observe-this "
+          >
+            Title
+          </h1>
+          <p
+            id="testing-text"
+            className="scroll-reveal-element right-scroll-reveal-start observe-this "
+          >
+            I am playing with this InfoPanel
+          </p>
+          <p
+            id="testing-text"
+            className="scroll-reveal-element right-scroll-reveal-start observe-this "
+          >
+            I am playing with this InfoPanel
+          </p>
+          <p
+            id="testing-text"
+            className="scroll-reveal-element right-scroll-reveal-start observe-this "
+          >
+            I am playing with this InfoPanel
+          </p>
+          <p
+            id="testing-text"
+            className="scroll-reveal-element right-scroll-reveal-start observe-this "
+          >
+            I am playing with this InfoPanel
+          </p>
         </div>
       </div>
+      {/* 
+      
+
+
+
+
+      */}
       <div id="container-scroll-reveal" className="2">
         <div
           id="leftpanel"
@@ -178,7 +211,7 @@ export default function InfoPanel() {
           <p>right InfoPanel</p>
         </div>
       </div>
-      <button onClick={handleClick}>add or remove</button>;
+      {/* <button onClick={handleClick}>add or remove</button>; */}
       {/* <button onClick={handleNewDiv}>new massive div</button>; */}
     </>
   );
