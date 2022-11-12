@@ -5,6 +5,7 @@ export default function Hero() {
   return (
     <div id="container-hero">
       <h1 id="text-hero">Need to contact me?</h1>
+      <p id="click-propt-hero">Just Click</p>
     </div>
   );
 }
