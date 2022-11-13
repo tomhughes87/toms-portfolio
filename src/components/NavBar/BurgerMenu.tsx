@@ -13,25 +13,25 @@ export default function BurgerMenu() {
 
         <ul className="menu__box">
           <li>
-            <Link className="NavLink-Text" to="/cv">
-              <p className="NavLink-Text">CV</p>
+            <Link className="burger-menu-text" to="/cv">
+              <p className="burger-menu-text">CV</p>
             </Link>
           </li>
           <li>
-            <Link className="NavLink-Text" to="/aboutme">
-              <p className="NavLink-Text">About Me</p>
-            </Link>
-          </li>
-
-          <li>
-            <Link className="NavLink-Text" to="/skills">
-              <p className="NavLink-Text">Skills</p>
+            <Link className="burger-menu-text" to="/aboutme">
+              <p className="burger-menu-text">About Me</p>
             </Link>
           </li>
 
           <li>
-            <Link className="NavLink-Text" to="/projects">
-              <p className="NavLink-Text">Projects</p>
+            <Link className="burger-menu-text" to="/skills">
+              <p className="burger-menu-text">Skills</p>
+            </Link>
+          </li>
+
+          <li>
+            <Link className="burger-menu-text" to="/projects">
+              <p className="burger-menu-text">Projects</p>
             </Link>
           </li>
         </ul>
