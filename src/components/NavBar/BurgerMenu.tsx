@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./BurgerMenuStyle.css";
 
 export default function BurgerMenu() {
   return (
