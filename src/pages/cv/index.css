@@ -22,3 +22,26 @@
     text-align: center;
     line-height: 150px;
 }
+
+#pdf-frame{
+    border-radius: 15px;
+    height: 1190px;
+    width: 850px;
+    /* height: auto; */
+
+    /* width: 50vw; */
+}
+
+/* 
+@media only screen and (max-width: 1180px) {
+    #pdf-frame{
+    width: 70vw;
+  }}
+ */
+  
+@media only screen and (max-width: 850px) {
+    #pdf-frame{
+    width: 98vw;
+    height: 100vh;
+    /* width: 0px; */
+  }}
