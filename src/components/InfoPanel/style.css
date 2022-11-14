@@ -9,11 +9,11 @@
 }
 
 .scroll-reveal-element {
-    transition: ease-in-out 1.5s;
+    transition: ease-in-out 1s;
     opacity: 0;  
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     color: rgb(77, 77, 77);
 }   
 
@@ -59,13 +59,6 @@ text-align: right;
     opacity: 1 !important;
     transform: translateX(10px) scale(100%) ;
 }
-
-
-
-
-
-
-
 
 
 
