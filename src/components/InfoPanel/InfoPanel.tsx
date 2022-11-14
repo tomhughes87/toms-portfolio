@@ -4,14 +4,6 @@ import pic from "./patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
 import ScrollRevealImageLeft from "./ScrollRevealImageLeft";
 
 export default function InfoPanel() {
-  const data = {
-    title: "Title testing",
-    text: `Ukrainian soldiers have been welcomed into Kherson by jubilant residents,
-    after Russia said it had fully withdrawn from the key  southern city.
-    Video showed locals on the streets, flying Ukraine's`,
-    image: { pic },
-  };
-
   useEffect(() => {
     let li: NodeListOf<HTMLElement> =
       document.querySelectorAll(".observe-this");
@@ -86,7 +78,7 @@ export default function InfoPanel() {
           </div>
         </div>
 
-        <ScrollRevealImageLeft data={data} />
+        <ScrollRevealImageLeft />
         {/* </div> */}
       </div>
     </>
