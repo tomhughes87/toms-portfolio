@@ -1,8 +1,17 @@
 import React, { useEffect } from "react";
 import "./style.css";
 import pic from "./patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
+import ScrollRevealImageLeft from "./ScrollRevealImageLeft";
 
 export default function InfoPanel() {
+  const data = {
+    title: "Title testing",
+    text: `Ukrainian soldiers have been welcomed into Kherson by jubilant residents,
+    after Russia said it had fully withdrawn from the key  southern city.
+    Video showed locals on the streets, flying Ukraine's`,
+    image: { pic },
+  };
+
   useEffect(() => {
     let li: NodeListOf<HTMLElement> =
       document.querySelectorAll(".observe-this");
@@ -41,26 +50,26 @@ export default function InfoPanel() {
           <div id="sub-container-scroll-reveal">
             <h1
               id="testing-text"
-              className="scroll-reveal-element right-scroll-reveal-start observe-this "
+              className="scroll-reveal-element right-scroll-reveal-start observe-this speed2"
             >
               Title
             </h1>
 
-            <p className="scroll-reveal-element right-scroll-reveal-start observe-this ">
-              Ukrainian soldiers have been welcomed into Kherson by jubilant{" "}
+            <p className="scroll-reveal-element right-scroll-reveal-start observe-this">
+              Ukrainian soldiers have been welcomed into Kherson by jubilant
             </p>
             <p className="scroll-reveal-element right-scroll-reveal-start observe-this ">
               residents, after Russia said it had fully withdrawn from the key
             </p>
-            <p className="scroll-reveal-element right-scroll-reveal-start observe-this ">
+            <p className="scroll-reveal-element right-scroll-reveal-start observe-this speed2">
               southern city. Video showed locals on the streets, flying
               Ukraine's
             </p>
-            <p className="scroll-reveal-element right-scroll-reveal-start observe-this ">
+            <p className="scroll-reveal-element right-scroll-reveal-start observe-this speed1">
               national flag and chanting as Kyiv's troops arrived. Ukrainian
               President
             </p>
-            <p className="scroll-reveal-element right-scroll-reveal-start observe-this ">
+            <p className="scroll-reveal-element right-scroll-reveal-start observe-this speed1">
               Volodymyr Zelensky said Kherson was "our city". Kherson was the
               only
             </p>
@@ -68,7 +77,7 @@ export default function InfoPanel() {
               regional capital taken by Russia after February's invasion. The
               retreat
             </p>
-            <p className="scroll-reveal-element right-scroll-reveal-start observe-this ">
+            <p className="scroll-reveal-element right-scroll-reveal-start observe-this speed2">
               has been seen as one of its biggest setbacks of the war.
             </p>
             <button className="scroll-reveal-element btn-reveal-start observe-this ">
@@ -76,6 +85,9 @@ export default function InfoPanel() {
             </button>
           </div>
         </div>
+
+        <ScrollRevealImageLeft data={data} />
+        {/* </div> */}
       </div>
     </>
   );
