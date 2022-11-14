@@ -4,7 +4,7 @@
   }
 
 #NotificationBarContainer{
-background-color: rgb(50, 49, 57);
+background-color:white;
 width: 100%;
 height: var(--BannerHeight);
 position: sticky;
@@ -16,15 +16,27 @@ z-index: 10;
 }
 
 #NotificationBarText{
-    font-weight: 700;
+    
     line-height: var(--BannerHeight);
-    color: white;
-    font-size: large;
-    font-weight: 300;
-    font-family: 'Trebuchet MS', sans-serif;
+    color:  #0072b1;
     align-self: center;
     text-decoration: none;
   }
+  
+  .intro-linkedin-text{
+    font-weight: 300;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: large;
+    margin-top: 21px;
+    margin-right: 7px;
+}
+
+.linkedin-text{
+
+  font-weight: 700;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+font-size: x-large ;
+}
 
 #NotificationBarCloseBtn{
 position: fixed;
@@ -37,12 +49,14 @@ height: 30px;
 }
 
 #NotificationBarCloseBtn p{
-    color: white;
+    color: #0072b1;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: x-large;
-    margin: 0;
+    margin-top: 4px;
+    font-weight: 700;
     text-align: center;
-    padding-bottom: 3px;
+
+    /* padding-bottom: 3px; */
     }
 
 .Disabled{
@@ -52,25 +66,25 @@ background-color:wheat;
       
 @media only screen and (max-width: 600px) {
   #NotificationBarText{
-    font-size: large;
+    /* font-size: large; */
 }
 }
 
 @media only screen and (max-width: 450px) {
   #NotificationBarText{
-    font-size: medium;
+    /* font-size: medium; */
 }
 }
 
 @media only screen and (max-width: 420px) {
   #NotificationBarText{
-    font-size: small  ;
+    /* font-size: small  ; */
     /* here text should just go double spaced */
 }
 } 
 
 @media only screen and (max-width: 349px) {
   #NotificationBarText{
-    font-size: x-small  ;
+    /* font-size: x-small  ; */
 }
 } 
