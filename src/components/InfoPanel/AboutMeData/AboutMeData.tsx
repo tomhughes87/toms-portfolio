@@ -1,3 +1,9 @@
+// interface aboutMeDataInterface {
+//   title: string;
+//   text: string | [];
+// }
+import ProcessDataScrollRev from "./ProcessDataScrollRev";
+
 export const AboutMeData = [
   {
     title: "Title testing",
@@ -19,6 +25,13 @@ export const AboutMeData = [
     text: `I've been 3d modeling for many years as a hobby, i use 3dmax, zbrush and substance painter
     and often upload my work to sketchfab. it's fun but i was finidng it hard to break into the industry
     and thought it would be best to keep it as a hobby. `,
+    // image: { pic },
+  },
+  {
+    title: "another test modeling",
+    text: ProcessDataScrollRev(`I've been 3d modeling for many years as a hobby, i use 3dmax, zbrush and substance painter
+    and often upload my work to sketchfab. it's fun but i was finidng it hard to break into the industry
+    and thought it would be best to keep it as a hobby. `),
     // image: { pic },
   },
 ];

@@ -1,33 +1,32 @@
 // THIS FUNC TAKES A PARAGRAPH AND SPLITS IT INTO LINES SO IT CAN BE ANIMATED LINE AT A TIME
-export default function ProcessDataScrollRev(AboutMeData: any) {
+export default function ProcessDataScrollRev(paraToSplit: any) {
   let allDataSorted = [];
 
-  for (let i = 0; i < AboutMeData.length; i++) {
-    const splittingText = AboutMeData[i].text.split(" ");
-    let paragraphOfSplitLines = [];
-    for (let i = 0; i < splittingText.length; i += 6) {
-      let arrOfLineOfWords: string[] = [];
+  console.log(paraToSplit);
+  const splittingText = paraToSplit.split(" ");
 
-      let wordsInALine =
-        splittingText[i] +
-        " " +
-        splittingText[i + 1] +
-        " " +
-        splittingText[i + 2] +
-        " " +
-        splittingText[i + 3] +
-        " " +
-        splittingText[i + 4] +
-        " " +
-        splittingText[i + 5];
+  let paragraphOfSplitLines = [];
+  for (let i = 0; i < splittingText.length; i += 6) {
+    let arrOfLineOfWords: string[] = [];
 
-      let removeUndefinded = wordsInALine.replaceAll("undefined", "");
+    let wordsInALine =
+      splittingText[i] +
+      " " +
+      splittingText[i + 1] +
+      " " +
+      splittingText[i + 2] +
+      " " +
+      splittingText[i + 3] +
+      " " +
+      splittingText[i + 4] +
+      " " +
+      splittingText[i + 5];
 
-      arrOfLineOfWords.push(removeUndefinded.trim());
+    let removeUndefinded = wordsInALine.replaceAll("undefined", "");
 
-      paragraphOfSplitLines.push(arrOfLineOfWords);
-    }
-    allDataSorted.push(paragraphOfSplitLines);
+    arrOfLineOfWords.push(removeUndefinded.trim());
+
+    paragraphOfSplitLines.push(arrOfLineOfWords);
   }
-  return allDataSorted;
+  return paragraphOfSplitLines;
 }

@@ -7,18 +7,18 @@ export default function ScrollRevealImageLeft() {
   const classNameLeft: string =
     "scroll-reveal-element left-scroll-reveal-start observe-this";
   const classNameRight: string =
-    "scroll-reveal-element right-scroll-reveal-start observe-this speed1";
+    "scroll-reveal-element right-scroll-reveal-start observe-this";
 
-  const sortedScrollData = ProcessDataScrollRev(AboutMeData);
-  // console.log("1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
+  // let FixedData = AboutMeData;
+  console.log(AboutMeData);
 
-  // console.log(ProcessDataScrollRev(AboutMeData[0].text));
-  console.log(ProcessDataScrollRev(AboutMeData));
-
-  // for (let i = 0; i < AboutMeData.length; i++) {
-  //   AboutMeData[i].text=sortedScrollData[i]
-  //   const mergedData
-
+  // for (let i = 0; i < FixedData.length; i++) {
+  // const splitup = ProcessDataScrollRev(AboutMeData[i].text);
+  // console.log("to this", splitup);
+  // FixedData[i].text = splitup;
+  // (ProcessDataScrollRev(FixedData[i].text));
+  // console.log(ProcessDataScrollRev(FixedData[i].text));
+  // console.log(FixedData[i].text);
   // }
 
   return (
@@ -33,9 +33,12 @@ export default function ScrollRevealImageLeft() {
               {section.title}
             </h1>
 
-            {sortedScrollData[2].map((line: any) => (
-              <p className={classNameRight}>{line}</p>
-            ))}
+            {
+              // const splitIntoLines = ProcessDataScrollRev(section.text)
+              // ProcessDataScrollRev(section.text).map((line: any) => (
+              // <p className={classNameRight}>{line}</p>
+              // ))
+            }
 
             <button className="scroll-reveal-element btn-reveal-start observe-this speed1">
               Portfolio
