@@ -35,9 +35,9 @@ export default function ScrollRevealImageLeft() {
 
             {
               // const splitIntoLines = ProcessDataScrollRev(section.text)
-              // ProcessDataScrollRev(section.text).map((line: any) => (
-              // <p className={classNameRight}>{line}</p>
-              // ))
+              section.text.map((line: any) => (
+                <p className={classNameRight}>{line}</p>
+              ))
             }
 
             <button className="scroll-reveal-element btn-reveal-start observe-this speed1">
