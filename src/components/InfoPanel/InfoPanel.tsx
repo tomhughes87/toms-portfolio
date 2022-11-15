@@ -7,7 +7,7 @@ export default function InfoPanel() {
   useEffect(() => {
     let li: NodeListOf<HTMLElement> =
       document.querySelectorAll(".observe-this");
-    console.log(li);
+    // console.log(li);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,7 +21,7 @@ export default function InfoPanel() {
     );
 
     li.forEach((item) => {
-      console.log(item);
+      // console.log(item);
       observer.observe(item);
     });
   }, []);
