@@ -11,6 +11,7 @@ export const AboutMeData = [
     after Russia said it had fully withdrawn from the key  southern city.
     Video showed locals on the streets, flying Ukraine's`),
     // image: { pic },
+    imageLeft: true,
   },
   {
     title: "Water Colours",
@@ -18,6 +19,7 @@ export const AboutMeData = [
     appricate where you are and keeps you in the moment. i first started painting 6 years ago
     when traveling in the Balkans`),
     // image: { pic },
+    imageLeft: true,
   },
 
   {
@@ -26,6 +28,7 @@ export const AboutMeData = [
     and often upload my work to sketchfab. it's fun but i was finidng it hard to break into the industry
     and thought it would be best to keep it as a hobby.`),
     // image: { pic },
+    imageLeft: true,
   },
   {
     title: "another test modeling",
@@ -33,5 +36,6 @@ export const AboutMeData = [
     and often upload my work to sketchfab. it's fun but i was finidng it hard to break into the industry
     and thought it would be best to keep it as a hobby. `),
     // image: { pic },
+    imageLeft: true,
   },
 ];
