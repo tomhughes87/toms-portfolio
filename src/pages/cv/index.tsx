@@ -10,7 +10,7 @@ export default function CvPage() {
       {/* <iframe src={`${pdf}#navpanes=0`} width="850px" height="1190px"></iframe> */}
       <br></br>
       <a id="downloadCVbtn" href={pdf} download="TomHughesCV">
-        Download CV
+        DOWNLOAD CV
       </a>
 
       <object id="pdf-frame" data={pdf} type="application/pdf">
