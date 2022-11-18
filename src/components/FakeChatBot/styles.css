@@ -1,0 +1,220 @@
+#container-fakeChatBot{
+    background-color: rgb(93, 93, 93);
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    height: 450px;
+    /* height:61px; */
+    width: 370px;
+    
+overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    z-index: 30;
+    transition: 1s;
+    
+
+
+}
+
+#container-header-fakeChatBot{
+    background-color: #2d2d2d;
+    color: rgb(235, 218, 158);
+    position: relative;
+    display:inline-flex ;
+    width: 100%;
+    /* padding: 5px; */
+}
+
+/* HEADER */
+
+.profile-pic-fakeChatBot{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(235, 218, 158);
+    padding: 5px;
+    margin: 5px;
+    margin-left: 9px;
+}
+
+
+.container-ai-status-username{
+    display: block;
+    margin-top: 5px;
+}
+
+.username-fakeChatBot{
+    font-weight: 700;
+    margin: 3px;
+}
+
+.status-fakeChatBot{
+    margin: 3px;
+    font-size: small;
+}
+
+#open-close-fakeChatBot{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 25px;
+    top: 17px;
+    cursor: pointer;
+    transition: 1s;
+    /* background-color: yellowgreen; */
+}
+
+/*  */
+/* Minimise Chat */
+/*  */
+.min-chat{
+    height:61px !important;
+}
+
+.min-chat-arrow{
+    rotate: 180deg !important;
+} 
+
+.blinking-alert{
+    /* transition: 1s; */
+    animation-name: blinking;
+    animation-duration: 2s;
+    animation-iteration-count: infinite
+
+}
+@keyframes blinking {
+    0%{
+    background-color: #2d2d2d;
+}
+50%{
+    background-color: rgb(153, 68, 68);
+
+}
+100%{
+    background-color: #2d2d2d;
+    /* background-color: #2d2d2d; */
+    }
+}
+
+/*  */
+
+
+
+
+input{
+    align-items: center;
+    height: 37px;
+    width: 285px;
+    border-radius: 15px;
+    background-color: lightgrey;
+    padding-left: 14px;
+    margin: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.chat-area-fakeChatBot{
+    background-color: aliceblue;
+    background-image: url("./fakechatbot-bg.png");
+    background-size: cover;
+    padding: 21px;
+    margin: 2px;
+    height: 63%;
+    /* min-height: 470px; */
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+
+
+
+.bubble {
+    position: relative;
+    font-family: sans-serif;
+    /* font-size: 18px; */
+    /* line-height: 24px; */
+    width: fit-content;
+    max-width: 240px;
+    min-width: 100px;
+    background: rgb(235, 218, 158);
+    border-radius: 20px;
+    padding: 9px;
+    /* text-align: center; */
+    color: #000;
+    margin-bottom: 37px;
+  }
+  
+  .bubble-bottom-left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid rgb(235, 218, 158);
+    border-right: 12px solid transparent;
+    border-top: 12px solid rgb(235, 218, 158);
+    border-bottom: 20px solid transparent;
+    left: 8px;
+    bottom: -17px;
+  }
+  
+
+
+
+    /* align-items: center;
+    justify-content: center; */
+    /* margin: 0 auto; */
+    /* right: 4px; */
+    /* display: flex;
+    height: 50px; */
+
+
+.message-FakeChatBot{
+    margin: 6px;
+}
+
+
+/*  */
+/* TYPEWRITER EFFECT */
+/*  */
+
+
+
+
+/* .text-FakeChatBot,  */
+#not-user {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    background-color: violet;
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  /* @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  } */
+  
+  /* The typewriter cursor effect */
+  /* @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  } */
+
+  
+/*  */
+/* ===========*/
+/*  */
