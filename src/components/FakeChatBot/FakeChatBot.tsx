@@ -3,10 +3,12 @@ import "./styles.css";
 import robot from "./robot-profile.png";
 import arrow from "./open-close-icon.png";
 import send from "./send-icon.png";
-// import convoData from "./ConvoData.json";
 import convoData from "./ConvoDataCopy.js";
 
 export default function FakeChatBot() {
+  const [clicker, setClicker] = useState(true);
+  const [logoClickCounter, setLogoClickCounter] = useState(0);
+
   const [chatRecord, setChatRecord] = useState([
     "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
     "Tom has create me to help you understand his skills",
@@ -14,102 +16,85 @@ export default function FakeChatBot() {
     "Hi there",
   ]);
 
-  const newTestingData: any = convoData;
-
-  // console.log(convoData);
-  // console.log(convoData[0]);
-  // console.log(convoData[0].typescript?[0]);
-  console.log(convoData.Typescript[2]);
-
-  const [chatTitle, setChatTitle] = useState("hey there!");
-  const [chatText, setChatText] = useState(
-    "Click something!... not too much though"
-  );
-
-  interface typesTyping {
-    Typescript: string;
-    Javascript: string;
-  }
-
-  // function clickInfoToBot() {}
-
   useEffect(() => {
+    console.log("LOGO CLICKED");
+    setLogoClickCounter(logoClickCounter + 1);
+    // console.log("clicks in useeffect", logoClickCounter);
+  }, [clicker]);
+
+  //on load:
+  useEffect(() => {
+    //
+    //get all the logos
     const watchLogos = document.getElementsByClassName("logo");
-    //   console.log(watchLogos);
-
+    //
+    //cicle through every logo
     for (let i = 0; i < watchLogos.length; i++) {
-      // const element = watchLogos[i];
-
-      // handle click of logo
+      // when logo is click ...
       watchLogos[i].addEventListener("click", () => {
-        const thingClicked = watchLogos[i].children[2].innerHTML;
-        console.log("clicked: be:", thingClicked);
+        setClicker(!clicker);
 
-        // type Easing = "Javascript" | "ease-out" | "ease-in-out";
-
-        const normString = "Javascript"; //type string
-        const spec: string = watchLogos[i].children[2].innerHTML; //type string
-
-        // console.log("trying", trying, "is type: ", typeof trying);
-        // console.log(
-        //   "othertrying",
-        //   othertrying,
-        //   "is type: ",
-        //   typeof othertrying
-        // );
-
-        // const tryingExtra = newTestingData.Typescript[1];
-        // console.log(".............this dunno:", convoData[`${othertrying}`][0]);
-        // console.log(".............this dunno:", convoData[`${normString}`][0]);
-
-        switch (spec) {
-          case "Typescript":
-            console.log("Typescript clicked!");
-            console.log("*******************", convoData.Typescript[0]);
-            convoData[`${normString}`].shift();
-            let newChatRecord = chatRecord;
-            console.log(newChatRecord);
-            newChatRecord.unshift(convoData.Typescript[0]);
-            console.log(chatRecord);
-            setChatRecord(newChatRecord);
-            console.log(chatRecord);
-
-            break;
-
-          case "Javascript":
-            console.log("Javascript clicked!");
-            break;
-
-          default:
-            break;
-        }
-        // console.log(".............this dunno:", convoData[Typescriptipt][0]);
-
-        let newChatRecord = chatRecord;
-        newChatRecord.unshift("hi");
-
-        // convoData[`${normString}`].shift();
-        // setChatRecord(newChatRecord);
-        // setChatTitle(watchLogos[i].children[2].innerHTML);
-
-        setChatRecord(newChatRecord);
+        console.log(setClicker);
+        console.log("clicks (within btn):", { logoClickCounter });
+        let newChatRecord: any = chatRecord; //make new chat record
+        newChatRecord.unshift("hi"); //add new message to start of chat record
+        console.log("---------new", newChatRecord);
+        console.log("---------old", chatRecord);
+        // setChatRecord(newChatRecord); //replace old chat record with new one
+        // console.log("CHAT RECORD AFTER MERGE", chatRecord);
+        //
+        // console.log("CHAT RECORD beofre MERGE", chatRecord);
+        // const thingClicked = watchLogos[i].children[2].innerHTML;
+        // console.log("clicked: be:", thingClicked);
+        // const whatLogosClicked: string = watchLogos[i].children[2].innerHTML; //type string
+        // updateChatrecord(whatLogosClicked);
       });
     }
   }, []);
 
-  // watchLogos.forEach(element => {
+  // function testAdd(newData) {}
 
-  // });
+  // function updateChatrecord(whatLogosClicked: string) {
+  //   console.log("func called");
+  //   switch (whatLogosClicked) {
+  //     case "Typescript":
+  //       const typescriptMessage = convoData.Typescript[0]; //select the first thing in the ts list
 
-  // element.addEventListener("click", myFunction);
+  //       let newChatRecord: any = chatRecord; //make new chat record
+  //       // newChatRecord = newChatRecord.unshift(typescriptMessage); //add new message to start of chat record
+  //       // setChatRecord(newChatRecord); //replace old chat record with new one
+  //       // console.log("CHAT RECORD AFTER MERGE", chatRecord);
+  //       break;
 
-  // function myFunction() {
-  //   document.getElementById("demo").innerHTML = "Hello World";
+  //     case "Javascript":
+  //       console.log("Javascript clicked!");
+  //       break;
+
+  //     default:
+  //       break;
+  //   }
+
+  //   // let newChatRecord = chatRecord;
+  //   // newChatRecord.unshift("hi");
+
+  //   // convoData[`${normString}`].shift();
+  //   // setChatRecord(newChatRecord);
+  //   // setChatTitle(watchLogos[i].children[2].innerHTML);
+
+  //   // setChatRecord(newChatRecord);
   // }
+  // // updateChatrecord("Typescript");
+
   function minimiseChat() {
     const chatbox = document.getElementById("container-fakeChatBot"); //select the chat box
     const arrow = document.getElementById("open-close-fakeChatBot"); //select the arrow
     const header = document.getElementById("container-header-fakeChatBot"); //select the arrow
+
+    // deleete this:
+    // let newChatRecord = chatRecord;
+    // newChatRecord.unshift("hi");
+    // setChatRecord(newChatRecord);
+    //
 
     //if chat box is currently close then enlarge it:
     if (chatbox?.classList.contains("min-chat")) {
