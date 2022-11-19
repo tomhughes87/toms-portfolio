@@ -47,32 +47,52 @@ export default function FakeChatBot() {
 
         // type Easing = "Javascript" | "ease-out" | "ease-in-out";
 
-        const trying = "Javascript"; //type string
-        const othertrying: string = watchLogos[i].children[2].innerHTML; //type string
+        const normString = "Javascript"; //type string
+        const spec: string = watchLogos[i].children[2].innerHTML; //type string
 
-        console.log("trying", trying, "is type: ", typeof trying);
-        console.log(
-          "othertrying",
-          othertrying,
-          "is type: ",
-          typeof othertrying
-        );
+        // console.log("trying", trying, "is type: ", typeof trying);
+        // console.log(
+        //   "othertrying",
+        //   othertrying,
+        //   "is type: ",
+        //   typeof othertrying
+        // );
 
         // const tryingExtra = newTestingData.Typescript[1];
         // console.log(".............this dunno:", convoData[`${othertrying}`][0]);
-        console.log(".............this dunno:", convoData[`${trying}`][0]);
+        // console.log(".............this dunno:", convoData[`${normString}`][0]);
+
+        switch (spec) {
+          case "Typescript":
+            console.log("Typescript clicked!");
+            console.log("*******************", convoData.Typescript[0]);
+            convoData[`${normString}`].shift();
+            let newChatRecord = chatRecord;
+            console.log(newChatRecord);
+            newChatRecord.unshift(convoData.Typescript[0]);
+            console.log(chatRecord);
+            setChatRecord(newChatRecord);
+            console.log(chatRecord);
+
+            break;
+
+          case "Javascript":
+            console.log("Javascript clicked!");
+            break;
+
+          default:
+            break;
+        }
         // console.log(".............this dunno:", convoData[Typescriptipt][0]);
 
         let newChatRecord = chatRecord;
-        newChatRecord.unshift(
-          // watchLogos[i].children[2].innerHTML,
-          convoData[`${trying}`][0]
-          // " Has been clicked!"
-        );
+        newChatRecord.unshift("hi");
 
-        convoData[`${trying}`].shift();
+        // convoData[`${normString}`].shift();
+        // setChatRecord(newChatRecord);
+        // setChatTitle(watchLogos[i].children[2].innerHTML);
+
         setChatRecord(newChatRecord);
-        setChatTitle(watchLogos[i].children[2].innerHTML);
       });
     }
   }, []);
