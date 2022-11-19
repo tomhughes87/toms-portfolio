@@ -2,21 +2,36 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import robot from "./robot-profile.png";
 import arrow from "./open-close-icon.png";
+import send from "./send-icon.png";
+// import convoData from "./ConvoData.json";
+import convoData from "./ConvoDataCopy.js";
 
 export default function FakeChatBot() {
-  const chatRecord = [
-    "Hi there",
-    "My name is a.a.i. I am Artifical a.i",
-    "Tom has create me to help you understand his skills",
+  const [chatRecord, setChatRecord] = useState([
     "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
-  ];
+    "Tom has create me to help you understand his skills",
+    "My name is a.a.i. I am Artifical a.i",
+    "Hi there",
+  ]);
+
+  const newTestingData: any = convoData;
+
+  // console.log(convoData);
+  // console.log(convoData[0]);
+  // console.log(convoData[0].typescript?[0]);
+  console.log(convoData.Typescript[2]);
 
   const [chatTitle, setChatTitle] = useState("hey there!");
   const [chatText, setChatText] = useState(
     "Click something!... not too much though"
   );
 
-  function clickInfoToBot() {}
+  interface typesTyping {
+    Typescript: string;
+    Javascript: string;
+  }
+
+  // function clickInfoToBot() {}
 
   useEffect(() => {
     const watchLogos = document.getElementsByClassName("logo");
@@ -24,10 +39,39 @@ export default function FakeChatBot() {
 
     for (let i = 0; i < watchLogos.length; i++) {
       // const element = watchLogos[i];
-      console.log("THINGS:", watchLogos[i].children[2].innerHTML);
+
+      // handle click of logo
       watchLogos[i].addEventListener("click", () => {
-        console.log("Logo clicked:");
-        // setChatText()
+        const thingClicked = watchLogos[i].children[2].innerHTML;
+        console.log("clicked: be:", thingClicked);
+
+        // type Easing = "Javascript" | "ease-out" | "ease-in-out";
+
+        const trying = "Javascript"; //type string
+        const othertrying: string = watchLogos[i].children[2].innerHTML; //type string
+
+        console.log("trying", trying, "is type: ", typeof trying);
+        console.log(
+          "othertrying",
+          othertrying,
+          "is type: ",
+          typeof othertrying
+        );
+
+        // const tryingExtra = newTestingData.Typescript[1];
+        // console.log(".............this dunno:", convoData[`${othertrying}`][0]);
+        console.log(".............this dunno:", convoData[`${trying}`][0]);
+        // console.log(".............this dunno:", convoData[Typescriptipt][0]);
+
+        let newChatRecord = chatRecord;
+        newChatRecord.unshift(
+          // watchLogos[i].children[2].innerHTML,
+          convoData[`${trying}`][0]
+          // " Has been clicked!"
+        );
+
+        convoData[`${trying}`].shift();
+        setChatRecord(newChatRecord);
         setChatTitle(watchLogos[i].children[2].innerHTML);
       });
     }
@@ -67,7 +111,7 @@ export default function FakeChatBot() {
       <div id="container-header-fakeChatBot" className="blinking-alert">
         <img className="profile-pic-fakeChatBot" src={robot} />
         <div className="container-ai-status-username">
-          <p className="username-fakeChatBot">A.A.I (Artificial A.I)</p>
+          <p className="username-fakeChatBot">A.A.I (Artificial A.i)</p>
           <p className="status-fakeChatBot">is typing a message</p>
           {/* <p className="status-fakeChatBot"></p> */}
         </div>
@@ -82,8 +126,14 @@ export default function FakeChatBot() {
         ))}
       </div>
 
-      <div>
-        <input type="text" disabled placeholder="A.A.I has disable you chat" />
+      <div className="write-message-container">
+        {/* <input type="text" placeholder="A.A.I has disable you chat" /> */}
+        <input
+          type="text"
+          disabled
+          placeholder="A.A.I has disable your sending ability"
+        />
+        <img className="send-btn-fakeChatBot" src={send} />
       </div>
     </div>
   );
