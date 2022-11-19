@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 // import "./index.css";
 import logo from "./namegen.png";
@@ -7,41 +7,31 @@ import icontesting from "./icon-testing.png";
 import iconppl from "./icon-ppl.png";
 import icondesktopmobile from "./icon-desktop-mobile.png";
 
-
-
 export default function ProjectIndiCard() {
   return (
+    <>
+      <div>projectIndiCard</div>
 
-<>
-
-    <div>projectIndiCard</div>
-
-
-    <div>
-
+      <div>
         <div className="maincardcontainer ">
           <div className="card">
             <div className="additional">
-
-{/* */}
-{/* left panel of card */}
+              {/* */}
+              {/* left panel of card */}
               <div className="user-card">
-
-
                 <div className="level center">Visit Site</div>
                 <div className=" levelgithub center">Visit GitHub</div>
 
                 <div className="techused center">Typescript, React</div>
-                
+
                 <img className="PhonePreview center" src={logo} alt="Logo" />
               </div>
-{/* end of side of card */}
-{/*  */}
+              {/* end of side of card */}
+              {/*  */}
 
-{/*  */}
-{/* BACK OF CARD 1 */}
+              {/*  */}
+              {/* BACK OF CARD 1 */}
               <div className="more-info">
-
                 <h1>Create a Pirate Ship Name</h1>
 
                 <div className="coords">
@@ -91,12 +81,10 @@ export default function ProjectIndiCard() {
                     <div className="value">yes</div>
                   </div>
                 </div>
-
               </div>
-{/* end of BACK OF CARD 1 */}
-{/*  */}
+              {/* end of BACK OF CARD 1 */}
+              {/*  */}
             </div>
-
 
             <div className="general">
               <h1>Random Name Generator</h1>
@@ -109,17 +97,10 @@ export default function ProjectIndiCard() {
             </div>
           </div>
 
-
-
-
-
-          
-      
-
-{/* wrap entire thing */}
-                      </div>
-        </div> 
-{/* ^^^^ wrap entire thing */}
-</>
-  )
+          {/* wrap entire thing */}
+        </div>
+      </div>
+      {/* ^^^^ wrap entire thing */}
+    </>
+  );
 }
