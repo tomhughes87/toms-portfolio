@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./styles.css";
 import robot from "./robot-profile.png";
 import arrow from "./open-close-icon.png";
 import send from "./send-icon.png";
 import convoData from "./ConvoDataCopy.js";
+import ChatWindow from "./ChatWindow";
 
 export default function FakeChatBot() {
   const [clicker, setClicker] = useState(true);
   const [logoClickCounter, setLogoClickCounter] = useState(0);
+
+  // const [chatRecord, setChatRecord] = useState([
+  //   "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
+  //   "Tom has create me to help you understand his skills",
+  //   "My name is a.a.i. I am Artifical a.i",
+  //   "Hi there",
+  // ]);
 
   const [chatRecord, setChatRecord] = useState([
     "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
@@ -26,10 +34,31 @@ export default function FakeChatBot() {
   // console.log(watchLogos);
 
   function clicked(e: any) {
-    // console.log("func running");
+    console.log("func running");
+
+    let newchat = e.target.innerHTML;
+
+    // chatRecord.push("this");
+
+    // newchat.unshift(e.target.innerHTML);
+    // setChatRecord(chatRecord=>({
+    //   [...chatRecord, newchat]})
+
+    // setChatRecord(chatRecord => ({
+    //   arrayvar: [...chatRecord.arrayvar, newelement]
+    // }))
+
+    // const setThing = () => {
+    // return ["this is added", ...chatRecord];
+    // setChatRecord(() => {
+    // return ["this is added", ...chatRecord];
+    // });
+    // };
+
+    // setThing;
     // console.log(e.target);
-    console.log(e.target.innerHTML);
-    return;
+    // console.log(chatRecord);
+    // console.log(e.target.innerHTML);
   }
 
   useEffect(() => {
@@ -38,16 +67,35 @@ export default function FakeChatBot() {
 
     const watchLogos = document.getElementsByClassName("logo");
     for (let i = 0; i < watchLogos.length; i++) {
-      watchLogos[i].addEventListener("click", clicked);
-      // watchLogos[i].addEventListener("click", () => {
-      // console.log("click!");
-      // let newchat = chatRecord;
-      // newchat.unshift("doing this");
-      // setChatRecord(newchat);
-      // console.log(chatRecord);
-      // });
+      // normal func
+      // watchLogos[i].addEventListener("click", clicked);
+      // func1 = () => {
+      // const update = () => {
+      // setChatRecord(["this is added", ...chatRecord]);
+      // ({ test: true }) // not working
+      // }
+      // return update;
+      // }
+
+      // arrow
+
+      watchLogos[i].addEventListener("click", () => {
+        // console.log("Event Listener, 'click', is working");
+        // setChatRecord(["this is added", ...chatRecord]);
+        // return setChat;
+      });
     }
-    return;
+
+    // watchLogos[i].addEventListener("click", () => {
+    // console.log("click!");
+    // clicked("2");
+    // let newchat = chatRecord;
+    // newchat.unshift("doing this");
+    // setChatRecord(newchat);
+    // console.log(chatRecord);
+    // });
+    // }
+    // return;
   }, []);
 
   // for (let i = 0; i < watchLogos.length; i++) {
@@ -122,8 +170,16 @@ export default function FakeChatBot() {
   // }
   // // updateChatrecord("Typescript");
 
+  function addThing() {
+    let newChatRecord = chatRecord;
+    newChatRecord.push("this");
+
+    setChatRecord([...chatRecord, "hi"]);
+  }
+
   return (
     <div id="container-fakeChatBot">
+      <button onClick={addThing}>add</button>
       {/*  */}
 
       <div id="container-header-fakeChatBot" className="blinking-alert">
@@ -131,18 +187,11 @@ export default function FakeChatBot() {
         <div className="container-ai-status-username">
           <p className="username-fakeChatBot">A.A.I (Artificial A.i)</p>
           <p className="status-fakeChatBot">is typing a message</p>
-          {/* <p className="status-fakeChatBot"></p> */}
         </div>
         <img id="open-close-fakeChatBot" onClick={minimiseChat} src={arrow} />
       </div>
 
-      <div className="chat-area-fakeChatBot">
-        {chatRecord.map((line) => (
-          <div className="bubble bubble-bottom-left" key={`messageKey${line}`}>
-            <p className="message-FakeChatBot">{line}</p>
-          </div>
-        ))}
-      </div>
+      <ChatWindow chatWindow={chatRecord} />
 
       <div className="write-message-container">
         {/* <input type="text" placeholder="A.A.I has disable you chat" /> */}
