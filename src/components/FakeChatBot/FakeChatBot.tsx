@@ -16,41 +16,76 @@ export default function FakeChatBot() {
     "Hi there",
   ]);
 
+  // useEffect(() => {
+  //   console.log("LOGO CLICKED");
+  //   setLogoClickCounter(logoClickCounter + 1);
+  //   // console.log("clicks in useeffect", logoClickCounter);
+  // }, [clicker]);
+
+  // console.log(chatRecord);
+  // console.log(watchLogos);
+
+  function clicked(e: any) {
+    console.log("func running");
+    console.log(e);
+    return;
+  }
   useEffect(() => {
-    console.log("LOGO CLICKED");
-    setLogoClickCounter(logoClickCounter + 1);
-    // console.log("clicks in useeffect", logoClickCounter);
-  }, [clicker]);
+    //
+    //
+
+    const watchLogos = document.getElementsByClassName("logo");
+    for (let i = 0; i < watchLogos.length; i++) {
+      watchLogos[i].addEventListener("click", clicked);
+      // watchLogos[i].addEventListener("click", () => {
+      // console.log("click!");
+      // let newchat = chatRecord;
+      // newchat.unshift("doing this");
+      // setChatRecord(newchat);
+      // console.log(chatRecord);
+      // });
+    }
+    return;
+  }, []);
+
+  // for (let i = 0; i < watchLogos.length; i++) {
+  //   let newchat = chatRecord;
+  //   newchat.unshift("doing this");
+  //   setChatRecord(newchat);
+  //   // console.log("in loop");
+  // }
+  // console.log(chatRecord);
 
   //on load:
-  useEffect(() => {
-    //
-    //get all the logos
-    const watchLogos = document.getElementsByClassName("logo");
-    //
-    //cicle through every logo
-    for (let i = 0; i < watchLogos.length; i++) {
-      // when logo is click ...
-      watchLogos[i].addEventListener("click", () => {
-        setClicker(!clicker);
-
-        console.log(setClicker);
-        console.log("clicks (within btn):", { logoClickCounter });
-        let newChatRecord: any = chatRecord; //make new chat record
-        newChatRecord.unshift("hi"); //add new message to start of chat record
-        console.log("---------new", newChatRecord);
-        console.log("---------old", chatRecord);
-        // setChatRecord(newChatRecord); //replace old chat record with new one
-        // console.log("CHAT RECORD AFTER MERGE", chatRecord);
-        //
-        // console.log("CHAT RECORD beofre MERGE", chatRecord);
-        // const thingClicked = watchLogos[i].children[2].innerHTML;
-        // console.log("clicked: be:", thingClicked);
-        // const whatLogosClicked: string = watchLogos[i].children[2].innerHTML; //type string
-        // updateChatrecord(whatLogosClicked);
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //
+  // console.log("load use effect running");
+  //get all the logos
+  // const watchLogos = document.getElementsByClassName("logo");
+  // console.log(watchLogos);
+  //
+  //cicle through every logo
+  // for (let i = 0; i < watchLogos.length; i++) {
+  // when logo is click ...
+  // watchLogos[i].addEventListener("click", () => {
+  // setClicker(!clicker);
+  // console.log(setClicker);
+  // console.log("clicks (within btn):", { logoClickCounter });
+  // let newChatRecord: any = chatRecord; //make new chat record
+  // newChatRecord.unshift("ello ello"); //add new message to start of chat record
+  // console.log("---------new", newChatRecord);
+  // console.log("---------old", chatRecord);
+  // setChatRecord(newChatRecord); //replace old chat record with new one
+  // console.log("CHAT RECORD AFTER MERGE", chatRecord);
+  //
+  // console.log("CHAT RECORD beofre MERGE", chatRecord);
+  // const thingClicked = watchLogos[i].children[2].innerHTML;
+  // console.log("clicked: be:", thingClicked);
+  // const whatLogosClicked: string = watchLogos[i].children[2].innerHTML; //type string
+  // updateChatrecord(whatLogosClicked);
+  // });
+  // }
+  // }, []);
 
   // function testAdd(newData) {}
 
@@ -85,30 +120,6 @@ export default function FakeChatBot() {
   // }
   // // updateChatrecord("Typescript");
 
-  function minimiseChat() {
-    const chatbox = document.getElementById("container-fakeChatBot"); //select the chat box
-    const arrow = document.getElementById("open-close-fakeChatBot"); //select the arrow
-    const header = document.getElementById("container-header-fakeChatBot"); //select the arrow
-
-    // deleete this:
-    // let newChatRecord = chatRecord;
-    // newChatRecord.unshift("hi");
-    // setChatRecord(newChatRecord);
-    //
-
-    //if chat box is currently close then enlarge it:
-    if (chatbox?.classList.contains("min-chat")) {
-      chatbox?.classList.remove("min-chat"); // remove class that minimised it
-      arrow?.classList.remove("min-chat-arrow"); //remove class that rotated it
-      header?.classList.remove("blinking-alert");
-    }
-    //if chatbox is open then close it:
-    else {
-      chatbox?.classList.add("min-chat"); // add class to minimise it
-      arrow?.classList.add("min-chat-arrow"); //add class to rotate it
-    }
-  }
-
   return (
     <div id="container-fakeChatBot">
       {/*  */}
@@ -125,7 +136,7 @@ export default function FakeChatBot() {
 
       <div className="chat-area-fakeChatBot">
         {chatRecord.map((line) => (
-          <div className="bubble bubble-bottom-left">
+          <div className="bubble bubble-bottom-left" key={`messageKey${line}`}>
             <p className="message-FakeChatBot">{line}</p>
           </div>
         ))}
@@ -142,4 +153,28 @@ export default function FakeChatBot() {
       </div>
     </div>
   );
+}
+
+function minimiseChat() {
+  const chatbox = document.getElementById("container-fakeChatBot"); //select the chat box
+  const arrow = document.getElementById("open-close-fakeChatBot"); //select the arrow
+  const header = document.getElementById("container-header-fakeChatBot"); //select the arrow
+
+  // deleete this:
+  // let newChatRecord = chatRecord;
+  // newChatRecord.unshift("hi");
+  // setChatRecord(newChatRecord);
+  //
+
+  //if chat box is currently close then enlarge it:
+  if (chatbox?.classList.contains("min-chat")) {
+    chatbox?.classList.remove("min-chat"); // remove class that minimised it
+    arrow?.classList.remove("min-chat-arrow"); //remove class that rotated it
+    header?.classList.remove("blinking-alert");
+  }
+  //if chatbox is open then close it:
+  else {
+    chatbox?.classList.add("min-chat"); // add class to minimise it
+    arrow?.classList.add("min-chat-arrow"); //add class to rotate it
+  }
 }

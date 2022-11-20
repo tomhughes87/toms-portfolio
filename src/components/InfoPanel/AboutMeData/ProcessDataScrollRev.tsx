@@ -2,7 +2,7 @@
 export default function ProcessDataScrollRev(paraToSplit: any) {
   let allDataSorted = [];
 
-  console.log(paraToSplit);
+  // console.log(paraToSplit);
   const splittingText = paraToSplit.split(" ");
 
   let paragraphOfSplitLines = [];

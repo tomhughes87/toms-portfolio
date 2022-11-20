@@ -19,29 +19,30 @@ import sound from "./BrisDeVerre.wav"
 import "./styles.css"
 
 
+
 export const Logo = ({ tech, path, tier }) => {
     
     
     function handleLogoClick(e) {
-
+        
 
         const audios = document.querySelectorAll('audio');       
         // audios.forEach.call(audios, function(audio) {            
             // audio.play()})
 
     const currentDmg=e.target.classList
-    console.log(currentDmg[2])
+    // console.log(currentDmg[2])
     switch (currentDmg[2]) {
         case "dmg0":
             e.target.children[0].classList.add("dmg-on")
-            console.log('its a dmg0')
+            // console.log('its a dmg0')
             currentDmg.remove("dmg0")
             currentDmg.add("dmg1")
             break;
     
             case "dmg1":
                 e.target.children[1].classList.add("dmg-on")
-            console.log('its a dmg1')
+            // console.log('its a dmg1')
             currentDmg.remove("dmg1")
             currentDmg.add("dmg2")
                 
@@ -49,7 +50,7 @@ export const Logo = ({ tech, path, tier }) => {
         
                 case "dmg2":
                 e.target.children[2].classList.add("dmg-on")
-            console.log('its a dmg2')
+            // console.log('its a dmg2')
             currentDmg.remove("dmg2")
             currentDmg.add("dmg3")
                 
@@ -101,6 +102,7 @@ export const Logo = ({ tech, path, tier }) => {
                 <img src={brokenGlass2} alt="" id="broken-glass" className="" />
                 <img src={brokenGlass3} alt="" id="broken-glass" className="" />
                 <img src={path} alt={tech} />
+                
                 {/* <p className="background-text">Back-End</p> */}
             </div>
 <audio id="heartbeat" src={sound} preload="auto"></audio> 
