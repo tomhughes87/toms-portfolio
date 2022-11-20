@@ -26,10 +26,12 @@ export default function FakeChatBot() {
   // console.log(watchLogos);
 
   function clicked(e: any) {
-    console.log("func running");
-    console.log(e);
+    // console.log("func running");
+    // console.log(e.target);
+    console.log(e.target.innerHTML);
     return;
   }
+
   useEffect(() => {
     //
     //
