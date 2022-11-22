@@ -29,20 +29,16 @@
 }
 
 .parallax-bg{
-    transform: translateZ(-10px) scale(2);
+    transform: translateZ(-15px) scale(2);
 }
 
 .parallax-BgCrane{
-    transform: translateZ(-8px) scale(2);
+    transform: translateZ(-10px) scale(2);
 }
 .parallax-MidCrane{
-    transform: translateZ(-7px) scale(1.7);
+    transform: translateZ(-5px) scale(1.7);
 }
-.parallax-mid{
-    /* transform: translateZ(-5px) scale(1) translateY(-40px); */
-    transform: translateZ(-5px) scale(1.5);
 
-}
 
 
 .parallax-fg{
@@ -53,7 +49,7 @@
 }
 
 .parallax-bus{
-    transform: translateZ(-2px) scale(1.2);
+    /* transform: translateZ(5px) scale(1.2); */
     /* transform: translateZ(3px) scale(.5) ; */
 
 }
@@ -126,22 +122,22 @@ opacity: 0.25;
         height: 100%;
         width: 100%;
         object-fit: cover;
-    
+
     }
     
     .parallax-bg{
-        transform: translateZ(-50px) scale(4);
+        transform: translateZ(-50px) scale(3.6);
     }
     
     .parallax-BgCrane{
-        transform: translateZ(-20px) scale(2);
+        transform: translateZ(-20px)  scale(2);
     }
     .parallax-MidCrane{
         transform: translateZ(-10px) scale(1.5);
     }
     .parallax-mid{
         
-        transform: translateZ(-5px) scale(1.3);
+        transform: translateZ(-5px) scale(1.32);
         z-index: -30;
     }
     
@@ -151,7 +147,8 @@ opacity: 0.25;
     }
     
     .parallax-bus{
-        
+        /* transform: translateZ(0px) scale(1.18); */
+
     
     }
         
