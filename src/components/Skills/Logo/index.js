@@ -20,15 +20,21 @@ import "./styles.css"
 
 
 
-export const Logo = ({ tech, path, tier }) => {
+export const Logo = ({ tech, path, tier, addToChat }) => {
     
     
     function handleLogoClick(e) {
-        
+    
+    // calling func in chatbot: addToChat()
+    addToChat()
 
-        const audios = document.querySelectorAll('audio');       
-        // audios.forEach.call(audios, function(audio) {            
-            // audio.play()})
+
+
+
+
+    const audios = document.querySelectorAll('audio');       
+    // audios.forEach.call(audios, function(audio) {            
+        // audio.play()})
 
     const currentDmg=e.target.classList
     // console.log(currentDmg[2])
@@ -93,6 +99,8 @@ export const Logo = ({ tech, path, tier }) => {
         // console.log("here",logoImg) 
         // logoImg.classList.remove("fadeout")
     }
+
+
     return (
 
         <div className="logo">

@@ -2,7 +2,7 @@ import React from 'react'
 import {Logo} from './Logo'
 import './style.css'
 
-export default function Skills ()  {
+export default function Skills ({addToChat})  {
 
 
     const allTechSkills = [
@@ -18,9 +18,11 @@ export default function Skills ()  {
             tech={item}
             path={`/images/skills/${item}.svg`}
             // tier={'silver'}
+            addToChat={addToChat}
         />)
     })
 
+    addToChat()
   return (
     <div className="container skills-wrapper rounded p-3">
        
@@ -29,6 +31,7 @@ export default function Skills ()  {
         <div className="skill-logos white">
         {allTechSkillsList}
         </div>
+
 
 
     </div>
