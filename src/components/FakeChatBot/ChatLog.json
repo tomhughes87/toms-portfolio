@@ -1,19 +1,16 @@
 [
-
     {
         "message":"I thought you were meant to be witty?!",
         "from":"user"
     },
-    
     {
         "message":"... fuck you",
         "from":"bot"
-    }   ,
+    },
     {
         "message":"Hi! Are you real?",
         "from":"user"
     },
-    
     {
         "message":"Hi there! I'm Artifical a.i",
         "from":"bot"

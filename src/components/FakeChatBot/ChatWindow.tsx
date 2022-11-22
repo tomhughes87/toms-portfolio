@@ -1,13 +1,12 @@
 import React from "react";
 
 export default function ChatWindow(props: any) {
-  console.log(props.chatWindow);
+  console.log("This is the prop in chat window:", props.chatWindow);
 
   return (
-    <div className="chat-area-fakeChatBot">
-      {/* <FillChat chatWindow={ChatWindow} /> */}
-
+    <div className="chat-area-fakeChatBot" key={props.chatWindow}>
       {props.chatWindow.map((line: any) => {
+        // BOT MESSAGE
         if (line.from === "bot")
           return (
             <div
@@ -17,6 +16,8 @@ export default function ChatWindow(props: any) {
               <p className="message-FakeChatBot">{line.message}</p>
             </div>
           );
+
+        // NOT BOT MESSAGE
         return (
           <div
             className="bubble-right bubble-bottom-right"
@@ -29,31 +30,3 @@ export default function ChatWindow(props: any) {
     </div>
   );
 }
-
-// export function FillChat(props: any) {
-//   props.chatWindow.map((line: any) => {
-//     // <>
-
-//     if (line.from === "bot") {
-//       return (
-//         <div
-//           className="bubble-left bubble-bottom-left"
-//           // key={`messageKey${line}`}
-//         >
-//           <p className="message-FakeChatBot">{line.message}</p>
-//         </div>
-//       );
-//     } else {
-//       return (
-//         <div
-//           className="bubble-right bubble-bottom-right"
-//           // key={`messageKey${line}`}
-//         >
-//           <p className="message-FakeChatBot">{line.message}</p>
-//         </div>
-//       );
-//     }
-//   });
-//   return;
-// }
-// </>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./styles.css";
-import convoData from "./ConvoDataCopy.js";
+// import convoData from "./ConvoDataCopy.js";
 import ChatWindow from "./ChatWindow";
 
 // data
-import ChatLog from "./ChatLog.json";
+import ChatLogOrigin from "./ChatLog.json";
 
 // images
 import robot from "./imgs/robot-profile.png";
@@ -13,12 +13,8 @@ import send from "./imgs/send-icon.png";
 
 export default function FakeChatBot({ myState }: any) {
   useEffect(() => {
-    //
-    //
     if (myState > 0) {
-      // return;
       chatFuncInChatBot();
-      //
     } else {
       return;
     }
@@ -32,7 +28,8 @@ export default function FakeChatBot({ myState }: any) {
   ]);
   const [counter, setcounter] = useState(0);
 
-  // function chatFuncInChatBot() {
+  const [ChatLog, setChatLog] = useState(ChatLogOrigin);
+
   const chatFuncInChatBot = () => {
     console.log(myState.length);
     // const thingClicked = watchLogos[i].children[2].innerHTML;
@@ -43,70 +40,28 @@ export default function FakeChatBot({ myState }: any) {
     console.log("before setstate,", chatRecord);
     newChatRecord.unshift("clickedThing");
     setChatRecord(newChatRecord);
-    // console.log("after setstate,", chatRecord);
   };
 
-  // useeffect(
-  // get all logos
-  // add event listener to all logos
-  // do a thing - database matching
-  // setstate <<<< FAILED
-
-  // )
-
-  //   switch (whatLogosClicked) {
-  //     case "Typescript":
-  //       const typescriptMessage = convoData.Typescript[0]; //select the first thing in the ts list
-
-  //       let newChatRecord: any = chatRecord; //make new chat record
-  //       // newChatRecord = newChatRecord.unshift(typescriptMessage); //add new message to start of chat record
-  //       // setChatRecord(newChatRecord); //replace old chat record with new one
-  //       // console.log("CHAT RECORD AFTER MERGE", chatRecord);
-  //       break;
-
-  //     case "Javascript":
-  //       console.log("Javascript clicked!");
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-
-  // function handleClickSend() {
-  //   const message = document.getElementById(
-  //     "text-input-chatbot"
-  //   ) as HTMLInputElement;
-  //   console.log(message.value);
-  //   let newChatRecord = chatRecord;
-  //   newChatRecord.unshift(message.value);
-  //   setChatRecord(newChatRecord);
-  //   console.log(chatRecord);
-  //   message.value = "";
-  // }
-
-  console.log(ChatLog);
+  console.log("reading state inside main func, ", ChatLog);
 
   const handleClickSend = () => {
     const message = document.getElementById(
       "text-input-chatbot"
     ) as HTMLInputElement;
-    console.log(message.value);
+    console.log("user input message is:", message.value);
 
     if (message.value === "") {
+      //if nothing entered, do nothing
       return;
     }
 
-    let newChatRecord = chatRecord;
-    newChatRecord.unshift(message.value);
-    setChatRecord(newChatRecord);
-    console.log(chatRecord);
-    message.value = "";
+    let newChatLog = ChatLog; //make new array
+    newChatLog.unshift({ message: message.value, from: "user" }); //add user message to new array
+    setChatLog(newChatLog); //replace old array with new one
+    console.log("message sent to chat record:", ChatLog);
+    message.value = ""; // reset the input box
     setcounter(counter + 1);
   };
-
-  useEffect(() => {
-    console.log("updated");
-  }, [chatRecord]);
 
   return (
     <div id="container-fakeChatBot">
@@ -114,11 +69,11 @@ export default function FakeChatBot({ myState }: any) {
       <div id="container-header-fakeChatBot" className="blinking-alert">
         <img className="profile-pic-fakeChatBot" src={robot} />
         <div className="container-ai-status-username">
-          {/* <p className="username-fakeChatBot">A.A.I (Artificial A.i)</p> */}
           <p className="username-fakeChatBot">A.A.I (Artificial A.i)</p>
           <p className="status-fakeChatBot">is typing a message</p>
         </div>
         <img id="open-close-fakeChatBot" onClick={minimiseChat} src={arrow} />
+        <p>{counter}</p>
       </div>
 
       {/* <p>{counter}</p> */}
