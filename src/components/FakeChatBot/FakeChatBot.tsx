@@ -1,21 +1,28 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./styles.css";
-import robot from "./robot-profile.png";
-import arrow from "./open-close-icon.png";
-import send from "./send-icon.png";
 import convoData from "./ConvoDataCopy.js";
 import ChatWindow from "./ChatWindow";
 
-export default function FakeChatBot() {
-  const [clicker, setClicker] = useState(true);
-  const [logoClickCounter, setLogoClickCounter] = useState(0);
+// data
+import ChatLog from "./ChatLog.json";
 
-  // const [chatRecord, setChatRecord] = useState([
-  //   "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
-  //   "Tom has create me to help you understand his skills",
-  //   "My name is a.a.i. I am Artifical a.i",
-  //   "Hi there",
-  // ]);
+// images
+import robot from "./imgs/robot-profile.png";
+import arrow from "./imgs/open-close-icon.png";
+import send from "./imgs/send-icon.png";
+
+export default function FakeChatBot({ myState }: any) {
+  useEffect(() => {
+    //
+    //
+    if (myState > 0) {
+      // return;
+      chatFuncInChatBot();
+      //
+    } else {
+      return;
+    }
+  }, [myState]);
 
   const [chatRecord, setChatRecord] = useState([
     "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
@@ -23,124 +30,30 @@ export default function FakeChatBot() {
     "My name is a.a.i. I am Artifical a.i",
     "Hi there",
   ]);
+  const [counter, setcounter] = useState(0);
 
-  // useEffect(() => {
-  //   console.log("LOGO CLICKED");
-  //   setLogoClickCounter(logoClickCounter + 1);
-  //   // console.log("clicks in useeffect", logoClickCounter);
-  // }, [clicker]);
+  // function chatFuncInChatBot() {
+  const chatFuncInChatBot = () => {
+    console.log(myState.length);
+    // const thingClicked = watchLogos[i].children[2].innerHTML;
+    // let clickedThing = e.target.innerHTML;
+    // console.log(clickedThing);
+    console.log("working, func in chatbot fired");
+    let newChatRecord = chatRecord;
+    console.log("before setstate,", chatRecord);
+    newChatRecord.unshift("clickedThing");
+    setChatRecord(newChatRecord);
+    // console.log("after setstate,", chatRecord);
+  };
 
-  // console.log(chatRecord);
-  // console.log(watchLogos);
+  // useeffect(
+  // get all logos
+  // add event listener to all logos
+  // do a thing - database matching
+  // setstate <<<< FAILED
 
-  function clicked(e: any) {
-    console.log("func running");
+  // )
 
-    let newchat = e.target.innerHTML;
-
-    // chatRecord.push("this");
-
-    // newchat.unshift(e.target.innerHTML);
-    // setChatRecord(chatRecord=>({
-    //   [...chatRecord, newchat]})
-
-    // setChatRecord(chatRecord => ({
-    //   arrayvar: [...chatRecord.arrayvar, newelement]
-    // }))
-
-    // const setThing = () => {
-    // return ["this is added", ...chatRecord];
-    // setChatRecord(() => {
-    // return ["this is added", ...chatRecord];
-    // });
-    // };
-
-    // setThing;
-    // console.log(e.target);
-    // console.log(chatRecord);
-    // console.log(e.target.innerHTML);
-  }
-
-  useEffect(() => {
-    //
-    //
-
-    const watchLogos = document.getElementsByClassName("logo");
-    for (let i = 0; i < watchLogos.length; i++) {
-      // normal func
-      // watchLogos[i].addEventListener("click", clicked);
-      // func1 = () => {
-      // const update = () => {
-      // setChatRecord(["this is added", ...chatRecord]);
-      // ({ test: true }) // not working
-      // }
-      // return update;
-      // }
-
-      // arrow
-
-      watchLogos[i].addEventListener("click", () => {
-        // console.log("Event Listener, 'click', is working");
-        // setChatRecord(["this is added", ...chatRecord]);
-        // return setChat;
-      });
-    }
-
-    // watchLogos[i].addEventListener("click", () => {
-    // console.log("click!");
-    // clicked("2");
-    // let newchat = chatRecord;
-    // newchat.unshift("doing this");
-    // setChatRecord(newchat);
-    // console.log(chatRecord);
-    // });
-    // }
-    // return;
-  }, []);
-
-  // for (let i = 0; i < watchLogos.length; i++) {
-  //   let newchat = chatRecord;
-  //   newchat.unshift("doing this");
-  //   setChatRecord(newchat);
-  //   // console.log("in loop");
-  // }
-  // console.log(chatRecord);
-
-  //on load:
-  // useEffect(() => {
-  //
-  // console.log("load use effect running");
-  //get all the logos
-  // const watchLogos = document.getElementsByClassName("logo");
-  // console.log(watchLogos);
-  //
-  //cicle through every logo
-  // for (let i = 0; i < watchLogos.length; i++) {
-  // when logo is click ...
-  // watchLogos[i].addEventListener("click", () => {
-  // setClicker(!clicker);
-  // console.log(setClicker);
-  // console.log("clicks (within btn):", { logoClickCounter });
-  // let newChatRecord: any = chatRecord; //make new chat record
-  // newChatRecord.unshift("ello ello"); //add new message to start of chat record
-  // console.log("---------new", newChatRecord);
-  // console.log("---------old", chatRecord);
-  // setChatRecord(newChatRecord); //replace old chat record with new one
-  // console.log("CHAT RECORD AFTER MERGE", chatRecord);
-  //
-  // console.log("CHAT RECORD beofre MERGE", chatRecord);
-  // const thingClicked = watchLogos[i].children[2].innerHTML;
-  // console.log("clicked: be:", thingClicked);
-  // const whatLogosClicked: string = watchLogos[i].children[2].innerHTML; //type string
-  // updateChatrecord(whatLogosClicked);
-  // });
-  // }
-  // }, []);
-
-  // function testAdd(newData) {}
-
-  // function updateChatrecord(whatLogosClicked: string) {
-  //   console.log("func called");
   //   switch (whatLogosClicked) {
   //     case "Typescript":
   //       const typescriptMessage = convoData.Typescript[0]; //select the first thing in the ts list
@@ -159,48 +72,78 @@ export default function FakeChatBot() {
   //       break;
   //   }
 
-  //   // let newChatRecord = chatRecord;
-  //   // newChatRecord.unshift("hi");
-
-  //   // convoData[`${normString}`].shift();
-  //   // setChatRecord(newChatRecord);
-  //   // setChatTitle(watchLogos[i].children[2].innerHTML);
-
-  //   // setChatRecord(newChatRecord);
+  // function handleClickSend() {
+  //   const message = document.getElementById(
+  //     "text-input-chatbot"
+  //   ) as HTMLInputElement;
+  //   console.log(message.value);
+  //   let newChatRecord = chatRecord;
+  //   newChatRecord.unshift(message.value);
+  //   setChatRecord(newChatRecord);
+  //   console.log(chatRecord);
+  //   message.value = "";
   // }
-  // // updateChatrecord("Typescript");
 
-  function addThing() {
+  console.log(ChatLog);
+
+  const handleClickSend = () => {
+    const message = document.getElementById(
+      "text-input-chatbot"
+    ) as HTMLInputElement;
+    console.log(message.value);
+
+    if (message.value === "") {
+      return;
+    }
+
     let newChatRecord = chatRecord;
-    newChatRecord.push("this");
+    newChatRecord.unshift(message.value);
+    setChatRecord(newChatRecord);
+    console.log(chatRecord);
+    message.value = "";
+    setcounter(counter + 1);
+  };
 
-    setChatRecord([...chatRecord, "hi"]);
-  }
+  useEffect(() => {
+    console.log("updated");
+  }, [chatRecord]);
 
   return (
     <div id="container-fakeChatBot">
-      <button onClick={addThing}>add</button>
-      {/*  */}
-
+      {/* <button onClick={addToChat}>test</button> */}
       <div id="container-header-fakeChatBot" className="blinking-alert">
         <img className="profile-pic-fakeChatBot" src={robot} />
         <div className="container-ai-status-username">
+          {/* <p className="username-fakeChatBot">A.A.I (Artificial A.i)</p> */}
           <p className="username-fakeChatBot">A.A.I (Artificial A.i)</p>
           <p className="status-fakeChatBot">is typing a message</p>
         </div>
         <img id="open-close-fakeChatBot" onClick={minimiseChat} src={arrow} />
       </div>
 
-      <ChatWindow chatWindow={chatRecord} />
+      {/* <p>{counter}</p> */}
+      <ChatWindow chatWindow={ChatLog} />
+      {/* <div className="chat-area-fakeChatBot">
+        {chatRecord.map((line: any) => (
+          <div className="bubble bubble-bottom-left" key={`messageKey${line}`}>
+            <p className="message-FakeChatBot">{line}</p>
+          </div>
+        ))}
+      </div> */}
 
       <div className="write-message-container">
-        {/* <input type="text" placeholder="A.A.I has disable you chat" /> */}
         <input
+          id="text-input-chatbot"
           type="text"
-          disabled
-          placeholder="A.A.I has disable your sending ability"
+          // disabled
+          placeholder="Write a message"
+          // placeholder="A.A.I has disable your sending ability"
         />
-        <img className="send-btn-fakeChatBot" src={send} />
+        <img
+          className="send-btn-fakeChatBot"
+          src={send}
+          onClick={handleClickSend}
+        />
       </div>
     </div>
   );
@@ -210,12 +153,6 @@ function minimiseChat() {
   const chatbox = document.getElementById("container-fakeChatBot"); //select the chat box
   const arrow = document.getElementById("open-close-fakeChatBot"); //select the arrow
   const header = document.getElementById("container-header-fakeChatBot"); //select the arrow
-
-  // deleete this:
-  // let newChatRecord = chatRecord;
-  // newChatRecord.unshift("hi");
-  // setChatRecord(newChatRecord);
-  //
 
   //if chat box is currently close then enlarge it:
   if (chatbox?.classList.contains("min-chat")) {

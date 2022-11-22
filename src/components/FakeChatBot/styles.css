@@ -165,7 +165,7 @@ input{
 
 .chat-area-fakeChatBot{
     background-color: aliceblue;
-    background-image: url("./fakechatbot-bg.png");
+    background-image: url("./imgs/fakechatbot-bg.png");
     background-size: cover;
     padding: 21px;
     margin: 2px;
@@ -180,7 +180,7 @@ input{
 
 
 
-.bubble {
+.bubble-left {
     position: relative;
     font-family: sans-serif;
     /* font-size: 18px; */
@@ -190,7 +190,7 @@ input{
     min-width: 100px;
     background: rgb(235, 218, 158);
     border-radius: 20px;
-    padding: 9px;
+    padding: 12px;
     /* text-align: center; */
     color: #000;
     margin-bottom: 37px;
@@ -207,9 +207,44 @@ input{
     border-bottom: 20px solid transparent;
     left: 8px;
     bottom: -17px;
+    display: flex;
+    align-self: flex-start;
   }
   
 
+  .bubble-right {
+    position: relative;
+    font-family: sans-serif;
+    /* font-size: 18px; */
+    /* line-height: 24px; */
+    width: fit-content;
+    max-width: 240px;
+    min-width: 100px;
+    background: rgb(183, 214, 239);
+    border-radius: 20px;
+    padding: 12px;
+    /* text-align: center; */
+    color: #000;
+    margin-bottom: 37px;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  
+  
+  .bubble-bottom-right:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 24px solid rgb(183, 214, 239);
+    border-left: 12px solid transparent;
+    border-top: 12px solid rgb(183, 214, 239);
+    border-bottom: 20px solid transparent;
+    right: 8px;
+    bottom: -17px;
+  }
+  
 
 
     /* align-items: center;
