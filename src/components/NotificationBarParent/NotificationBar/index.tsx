@@ -6,7 +6,7 @@ interface propTypes {
 }
 
 function loadLinkedIn() {
-  console.log("clicked");
+  // console.log("clicked");
   // href="" target="_blank"
   window.open("", "_blank");
 }

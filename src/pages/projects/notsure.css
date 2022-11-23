@@ -1,0 +1,15 @@
+
+.ProjCardsMainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin-left: 50px; */
+    /* margin-right: 70px; */
+  }
+  
+  
+  /* .addition{
+  
+  background: linear-gradient(#291aad, #87afaf);
+  
+  } */

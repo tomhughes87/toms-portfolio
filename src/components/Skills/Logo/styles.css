@@ -1,0 +1,24 @@
+#broken-glass{
+    /* width: 141px; */
+    /* height: 116px; */
+    position: absolute;
+    z-index: 4; 
+    pointer-events: none;
+    /* display: none; */
+    /* background-color: yellowgreen; */
+    opacity: 0;
+    transition: 0.15s;
+    }
+   
+.dmg-on{
+    opacity: 1 !important;
+}
+
+.fadeout{
+    opacity: 0 !important;
+}
+/* 
+.background-text{
+    position: absolute;
+
+} */

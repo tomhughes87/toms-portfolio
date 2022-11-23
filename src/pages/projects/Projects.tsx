@@ -4,13 +4,13 @@
 //   return (
 //   )
 // }
-import React from 'react'
-import ProjectCards from '../../components/projectCards'
-import ProjectIndiCardRedo from '../../components/redoing'
+import React from "react";
+import ProjectCards from "../../components/projectCards";
+import ProjectIndiCardRedo from "../../components/redoing";
 // import "./styles.css";
-import CardData  from '../../data/data.json'
+import CardData from "../../data/data.json";
 
-console.log(CardData  )
+// console.log(CardData  )
 
 export default function Projects() {
   return (
@@ -18,10 +18,10 @@ export default function Projects() {
       {/* <div>Projects</div> */}
       {/* <p>hei</p> */}
       {/* <ProjectCards /> */}
-      
-<br></br>
-<br></br>
-      <div className='ProjCardsMainContainer'>
+
+      <br></br>
+      <br></br>
+      <div className="ProjCardsMainContainer">
         <ProjectIndiCardRedo details={CardData} />
         {/* <ProjectIndiCardRedo /> */}
         {/* <ProjectIndiCardRedo /> */}
@@ -29,5 +29,5 @@ export default function Projects() {
         {/* <ProjectIndiCardRedo /> */}
       </div>
     </>
-  )
+  );
 }

@@ -28,6 +28,6 @@ test('close btn remove all elements of the notification bar', () => {
   const NotiCloseBtn = document.getElementById('NotificationBarCloseBtn')
   fireEvent.click(NotiCloseBtn)
   const NotiBarContainer = document.getElementById('NotificationBarContainer')
-  console.log({NotiBarContainer})
+  // console.log({NotiBarContainer})
   expect(NotiBarContainer).toBeNull();
 });
