@@ -11,6 +11,9 @@ import robot from "./imgs/robot-profile.png";
 import arrow from "./imgs/open-close-icon.png";
 import send from "./imgs/send-icon.png";
 
+// func
+import { ComputebotResponses } from "./ComputebotResponses";
+
 export default function FakeChatBot({ myState }: any) {
   useEffect(() => {
     if (myState > 0) {
@@ -42,7 +45,14 @@ export default function FakeChatBot({ myState }: any) {
     setChatRecord(newChatRecord);
   };
 
+  const [userMessage, setUserMessage] = useState("");
+
   console.log("reading state inside main func, ", ChatLog);
+
+  const handleSetState = (newChatLog: any) => {
+    console.log("HANDLING STATE HERE!");
+    setChatLog(newChatLog); //replace old array with new one
+  };
 
   const handleClickSend = () => {
     const message = document.getElementById(
@@ -51,21 +61,60 @@ export default function FakeChatBot({ myState }: any) {
     console.log("user input message is:", message.value);
 
     if (message.value === "") {
-      //if nothing entered, do nothing
+      //GUARD: if nothing entered, do nothing
       return;
     }
 
     let newChatLog = ChatLog; //make new array
     newChatLog.unshift({ message: message.value, from: "user" }); //add user message to new array
-    setChatLog(newChatLog); //replace old array with new one
+
+    handleSetState(newChatLog); //replace old array with new one
+
     console.log("message sent to chat record:", ChatLog);
+
     message.value = ""; // reset the input box
-    setcounter(counter + 1);
+    setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+    //
+    // handleSetState(message.value);
+    setUserMessage(message.value);
+    //
+    // console.log(userMessage);
+    // botResponse(message.value);
+    // const botMessage = computebotResponses(message.value);
+    // const thing = <ComputebotResponses />;
+    botResponse(message.value);
+    // botResponse(message.value, setChatLog, setcounter);
+    // setUserMessage("thiiiiiiiiiiiiis is set late");
+    // computebotResponses(userMessage);
+    // console.log("RETURNED MESSAGE~", botMessage);
+    // };
+
+    // const botResponse = () => {
+    function botResponse(
+      message: string
+      // { setChatLog }: any,
+      // { setcounter }: any
+    ) {
+      // }
+
+      console.log("in botReps func", message);
+      // console.log(message);
+      // const botMessage = ComputebotResponses(message);
+      console.log("waiting");
+      // setTimeout(() => {
+      console.log("wait over!");
+      // console.log("the returned message", botMessage);
+      let newChatLog = ChatLog; //make new array
+      newChatLog.unshift({ message: "Bugger Off!", from: "bot" }); //add user message to new array
+      // setChatLog(newChatLog); //replace old array with new one
+      console.log("Bot message sent to chat record:", ChatLog);
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      // }, 10000);
+    }
   };
 
   return (
     <div id="container-fakeChatBot">
-      {/* <button onClick={addToChat}>test</button> */}
       <div id="container-header-fakeChatBot" className="blinking-alert">
         <img className="profile-pic-fakeChatBot" src={robot} />
         <div className="container-ai-status-username">
@@ -73,18 +122,9 @@ export default function FakeChatBot({ myState }: any) {
           <p className="status-fakeChatBot">is typing a message</p>
         </div>
         <img id="open-close-fakeChatBot" onClick={minimiseChat} src={arrow} />
-        <p>{counter}</p>
       </div>
 
-      {/* <p>{counter}</p> */}
       <ChatWindow chatWindow={ChatLog} />
-      {/* <div className="chat-area-fakeChatBot">
-        {chatRecord.map((line: any) => (
-          <div className="bubble bubble-bottom-left" key={`messageKey${line}`}>
-            <p className="message-FakeChatBot">{line}</p>
-          </div>
-        ))}
-      </div> */}
 
       <div className="write-message-container">
         <input
