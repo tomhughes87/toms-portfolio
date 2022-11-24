@@ -5,13 +5,8 @@
         "message":"What's your name?",
         "from":"bot"
     },
-    
     {
-        "message":"Tom made me to help navigate this site.",
-        "from":"bot"
-    },
-    {
-        "message":"Hi there! I'm Artifical a.i",
+        "message":"Hi there! I'm Artifical a.i. Tom made me to help navigate his site. ",
         "from":"bot"
     }   
 ]
