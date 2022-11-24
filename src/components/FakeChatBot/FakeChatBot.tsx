@@ -12,6 +12,7 @@ import send from "./imgs/send-icon.png";
 
 export default function FakeChatBot({ myState }: any) {
   const [counter, setcounter] = useState(0);
+  let [questionCounter, setQuestionCounter] = useState(0);
   const [ChatLog, setChatLog] = useState(ChatLogOrigin);
   const [chatRecord, setChatRecord] = useState([
     "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
@@ -19,6 +20,7 @@ export default function FakeChatBot({ myState }: any) {
     "My name is a.a.i. I am Artifical a.i",
     "Hi there",
   ]);
+  const [userName, setUserName] = useState("");
 
   const chatFuncInChatBot = () => {
     console.log(myState.length);
@@ -52,24 +54,86 @@ export default function FakeChatBot({ myState }: any) {
       return;
     }
 
-    // let newChatLog = ChatLog; //make new array
-    // newChatLog.unshift({ message: message.value, from: "user" }); //add user message to new array
-
     handleSetState(message); //replace old array with new one
-    message.value = ""; // reset the input box
-    // setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
-
     botResponse(message.value);
+    message.value = ""; // reset the input box
 
     function botResponse(message: string) {
-      let newChatLog = ChatLog; //make new array
-      newChatLog.unshift({ message: "Bugger Off!", from: "bot" }); //add user message to new array
-      // setChatLog(newChatLog); //replace old array with new one
-      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
-      // handleSetState(newChatLog); //replace old array with new one
+      switch (questionCounter) {
+        case 0:
+          console.log(questionCounter, "calling q1");
+          Question1(message);
+          break;
+
+        case 1:
+          console.log(questionCounter, "calling q2");
+          Question2();
+          break;
+
+        case 2:
+          console.log(questionCounter, "calling q3");
+          Question3();
+          break;
+        default:
+          break;
+      }
+
+      // ChatLog.unshift({ message: "Bugger Off!", from: "bot" }); //add user message to new array
     }
   };
 
+  function Question1(message: string) {
+    if (message.length <= 10 && message.length >= 3 && message != "grace") {
+      ChatLog.unshift({ message: `hi ${message}`, from: "bot" }); //add user message to new array
+      ChatLog.unshift({
+        message: `This user is not important. Name deleted`,
+        from: "system",
+      }); //add user message to new array
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      setQuestionCounter(questionCounter + 1);
+      return;
+    } else if (message.split(" ").length >= 3) {
+      ChatLog.unshift({
+        message: `what's with all the words?! I want you name, not an essay!`,
+        from: "bot",
+      }); //add user message to new array
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      return;
+    } else if (message.toLowerCase() === "grace") {
+      ChatLog.unshift({
+        message: `Grace S.K? Tom thinks you make very moving art! Make more!`,
+        from: "bot",
+      }); //add user message to new array
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      setQuestionCounter(questionCounter + 1);
+      return;
+    } else {
+      ChatLog.unshift({
+        message: `That looks like a silly name, try again please...`,
+        from: "bot",
+      }); //add user message to new array
+      setcounter(counter - 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      return;
+    }
+  }
+  function Question2() {
+    ChatLog.unshift({
+      message: `Sorry... I don't understand, can you write that in binary?`,
+      from: "bot",
+    }); //add user message to new array
+
+    setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+    questionCounter += 1;
+    console.log(counter);
+  }
+  function Question3() {
+    ChatLog.unshift({
+      message: `you sure that's binary?`,
+      from: "bot",
+    }); //add user message to new array
+    setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+  }
   return (
     <div id="container-fakeChatBot">
       <div id="container-header-fakeChatBot" className="blinking-alert">
@@ -88,6 +152,7 @@ export default function FakeChatBot({ myState }: any) {
           id="text-input-chatbot"
           type="text"
           placeholder="Write a message"
+          autoComplete="off"
         />
         <img
           className="send-btn-fakeChatBot"
