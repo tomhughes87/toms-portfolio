@@ -120,7 +120,9 @@ input{
 }
 
 .chat-disabled{
-    background-color: lightgrey;
+    background-color: rgb(202, 201, 201) !important;
+    cursor: not-allowed !important;
+    
 }
 
 .send-btn-fakeChatBot{
@@ -246,6 +248,30 @@ input{
   }
   
 
+  
+  .bubble-center {
+    position: relative;
+    font-family: sans-serif;
+    /* font-size: 18px; */
+    /* line-height: 24px; */
+    width: fit-content;
+    max-width: 240px;
+    min-width: 80px;
+    background: rgb(133, 133, 133);
+    border-radius: 20px;
+    padding: 2px;
+    /* text-align: center; */
+    color: rgb(255,255,255);
+    margin-bottom: 37px;
+    display: flex;
+    align-self: center;
+    font-style: italic;
+    text-align: center;
+  }
+
+  
+  
+
 
     /* align-items: center;
     justify-content: center; */
@@ -296,3 +322,41 @@ input{
 /*  */
 /* ===========*/
 /*  */
+
+
+
+/* ////////////////////// */
+/* ////////////////////// */
+/*          MOBILE        */
+/* ////////////////////// */
+/* ////////////////////// */
+
+@media only screen and (max-width: 480px) {
+
+#container-fakeChatBot{
+  width: 230px;
+  bottom: -8px;
+}
+
+.profile-pic-fakeChatBot {
+  width: 31px;
+  height: 31px;
+}
+
+
+#open-close-fakeChatBot {
+  width: 17px;
+    height: 17px;
+  right: 15px;
+  top: 15px;
+}
+
+.username-fakeChatBot {
+  font-size: small;
+}
+
+.message-FakeChatBot {
+  
+  font-size: small;
+} 
+}

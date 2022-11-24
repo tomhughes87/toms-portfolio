@@ -17,15 +17,25 @@ export default function ChatWindow(props: any) {
             </div>
           );
 
-        // NOT BOT MESSAGE
-        return (
-          <div
-            className="bubble-right bubble-bottom-right"
-            // key={`messageKey${line}`}
-          >
-            <p className="message-FakeChatBot">{line.message}</p>
-          </div>
-        );
+        // USER MESSAGE
+        if (line.from === "user")
+          return (
+            <div
+              className="bubble-right bubble-bottom-right"
+              // key={`messageKey${line}`}
+            >
+              <p className="message-FakeChatBot">{line.message}</p>
+            </div>
+          );
+        if (line.from === "system")
+          return (
+            <div
+              className="bubble-center "
+              // key={`messageKey${line}`}
+            >
+              <p className="message-FakeChatBot">{line.message}</p>
+            </div>
+          );
       })}
     </div>
   );
