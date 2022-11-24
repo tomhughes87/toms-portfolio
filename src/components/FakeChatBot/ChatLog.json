@@ -8,5 +8,10 @@
     {
         "message":"Hi there! I'm Artifical a.i. Tom made me to help navigate his site. ",
         "from":"bot"
-    }   
+    },
+    {
+        "listBtns":["Click to visit translator", "other btn"],
+        "from":"btns"
+    }    
+
 ]

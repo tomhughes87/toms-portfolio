@@ -10,7 +10,7 @@ export default function ChatWindow(props: any) {
         if (line.from === "bot")
           return (
             <div
-              className="bubble-left bubble-bottom-left"
+              className="bubble-left bubble-bottom-left text-FakeChatBot"
               // key={`messageKey${line}`}
             >
               <p className="message-FakeChatBot">{line.message}</p>
@@ -27,6 +27,7 @@ export default function ChatWindow(props: any) {
               <p className="message-FakeChatBot">{line.message}</p>
             </div>
           );
+        // SYSTEM MESSAGE
         if (line.from === "system")
           return (
             <div
@@ -36,6 +37,17 @@ export default function ChatWindow(props: any) {
               <p className="message-FakeChatBot">{line.message}</p>
             </div>
           );
+        // BTNS MESSAGE
+        if (line.from === "btns") {
+          console.log(line);
+          return line.listBtns.map((btnText: any) => {
+            console.log(btnText);
+            <div>
+              <button>{btnText}</button>;<p>{btnText}</p>;
+            </div>;
+          });
+        }
+        // <button ></button>
       })}
     </div>
   );
