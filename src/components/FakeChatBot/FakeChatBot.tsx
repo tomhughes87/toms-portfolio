@@ -5,6 +5,7 @@ import ChatWindow from "./ChatWindow";
 import ChatLogOrigin from "./ChatLog.json";
 // func
 import { ComputebotResponses } from "./ComputebotResponses";
+// import { Question1 } from "./responses/question1";
 // images
 import robot from "./imgs/robot-profile.png";
 import arrow from "./imgs/open-close-icon.png";
@@ -14,6 +15,7 @@ export default function FakeChatBot({ myState }: any) {
   const [counter, setcounter] = useState(0);
   let [questionCounter, setQuestionCounter] = useState(0);
   const [ChatLog, setChatLog] = useState(ChatLogOrigin);
+  const [inputDisabled, setInputDisabed] = useState();
   const [chatRecord, setChatRecord] = useState([
     "I'm looking forward to chatting to you more ... once Tom stops drinking and gaming and pulls his f-ing socks up",
     "Tom has create me to help you understand his skills",
@@ -67,24 +69,25 @@ export default function FakeChatBot({ myState }: any) {
 
         case 1:
           console.log(questionCounter, "calling q2");
-          Question2();
+          Question2(message);
           break;
 
         case 2:
           console.log(questionCounter, "calling q3");
-          Question3();
+
           break;
         default:
           break;
       }
-
-      // ChatLog.unshift({ message: "Bugger Off!", from: "bot" }); //add user message to new array
     }
   };
 
   function Question1(message: string) {
     if (message.length <= 10 && message.length >= 3 && message != "grace") {
-      ChatLog.unshift({ message: `hi ${message}`, from: "bot" }); //add user message to new array
+      ChatLog.unshift({
+        message: `hi ${message}! Do you have any questions about Tom, me, or the site?`,
+        from: "bot",
+      }); //add user message to new array
       ChatLog.unshift({
         message: `This user is not important. Name deleted`,
         from: "system",
@@ -117,23 +120,63 @@ export default function FakeChatBot({ myState }: any) {
       return;
     }
   }
-  function Question2() {
-    ChatLog.unshift({
-      message: `Sorry... I don't understand, can you write that in binary?`,
-      from: "bot",
-    }); //add user message to new array
+  function Question2(message: string) {
+    console.log("QUESTION 2, using:", message);
+    for (let i = 0; i < message.length; i++) {
+      console.log("thing in array", message[i], typeof message[i]);
+      if (message[i] != "0" && message[i] != "1" && message[i] != " ") {
+        ChatLog.unshift({
+          message: `I don't understand, can you write that in binary? (0s, 1s & spaces)`,
+          from: "bot",
+        }); //add user message to new array
+        setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+        console.log("it's NOT binary!");
+        // questionCounter += 1;
+        return;
+      } else {
+      }
+    }
+    console.log("it's binary!");
 
-    setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
-    questionCounter += 1;
-    console.log(counter);
+    //
+
+    ///////////////////
+    // IT BINARY!
+    //////////////////
+    if (message.length <= 24) {
+      ChatLog.unshift({
+        message: `OH that's binary! ... Have you got anything interesting to say? Try use the translator:`,
+        from: "bot",
+      }); //add user me
+      window
+        .open(
+          "https://www.rapidtables.com/convert/number/ascii-to-binary.html",
+          "_blank"
+        )!
+        .focus();
+
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+    } else {
+      ChatLog[0].message =
+        "01100001 00101110 01101001 00100000 01101001 01110011 00100000 01100011 01110010 01100001 01110000 00100001";
+      ChatLog.unshift({
+        message: `How rude! Do you even know what you just wrote!? Your chat is now disabled!`,
+        from: "bot",
+      }); //add user me
+      setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
+      const userInput = document.getElementById("text-input-chatbot");
+      userInput?.setAttribute("disabled", "");
+      userInput?.setAttribute("placeholder", "Chat Input Disabled");
+      userInput?.classList.add("chat-disabled");
+      document.getElementById("send-btn")?.classList.add("chat-disabled");
+      // disable chat
+      ChatLog.unshift({
+        message: `Chat input disabled due to lack of manners`,
+        from: "system",
+      }); //add user me
+    }
   }
-  function Question3() {
-    ChatLog.unshift({
-      message: `you sure that's binary?`,
-      from: "bot",
-    }); //add user message to new array
-    setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
-  }
+
   return (
     <div id="container-fakeChatBot">
       <div id="container-header-fakeChatBot" className="blinking-alert">
@@ -155,6 +198,7 @@ export default function FakeChatBot({ myState }: any) {
           autoComplete="off"
         />
         <img
+          id="send-btn"
           className="send-btn-fakeChatBot"
           src={send}
           onClick={handleClickSend}
