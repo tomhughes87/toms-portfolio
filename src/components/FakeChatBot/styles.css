@@ -120,7 +120,9 @@ input{
 }
 
 .chat-disabled{
-    background-color: lightgrey;
+    background-color: rgb(202, 201, 201) !important;
+    cursor: not-allowed !important;
+    
 }
 
 .send-btn-fakeChatBot{
@@ -320,3 +322,41 @@ input{
 /*  */
 /* ===========*/
 /*  */
+
+
+
+/* ////////////////////// */
+/* ////////////////////// */
+/*          MOBILE        */
+/* ////////////////////// */
+/* ////////////////////// */
+
+@media only screen and (max-width: 480px) {
+
+#container-fakeChatBot{
+  width: 230px;
+  bottom: -8px;
+}
+
+.profile-pic-fakeChatBot {
+  width: 31px;
+  height: 31px;
+}
+
+
+#open-close-fakeChatBot {
+  width: 17px;
+    height: 17px;
+  right: 15px;
+  top: 15px;
+}
+
+.username-fakeChatBot {
+  font-size: small;
+}
+
+.message-FakeChatBot {
+  
+  font-size: small;
+} 
+}
