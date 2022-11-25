@@ -37,8 +37,9 @@ export default function FakeChatBot({ myState }: any) {
     ChatLog.unshift({ message: message.value, from: "user" }); //add user message to new array
   };
 
-  const handleClickSend = () => {
+  const handleClickSend = (event: any) => {
     // get user message
+    event.preventDefault();
     const message = document.getElementById(
       "text-input-chatbot"
     ) as HTMLInputElement;
@@ -85,7 +86,7 @@ export default function FakeChatBot({ myState }: any) {
       }); //add user message to new array
       setChatBotStatus("Here to guild you");
       ChatLog.unshift({
-        message: `This user is not important. Name deleted`,
+        message: `This user is not important. Name deleted.`,
         from: "system",
       }); //add user message to new array
       setChatBotStatus("Here to guild you");
@@ -94,7 +95,7 @@ export default function FakeChatBot({ myState }: any) {
       return;
     } else if (message.split(" ").length >= 3) {
       ChatLog.unshift({
-        message: `what's with all the words?! I want you name, not an essay!`,
+        message: `What's with all the words? I want you name, not an essay!`,
         from: "bot",
       }); //add user message to new array
 
@@ -127,20 +128,16 @@ export default function FakeChatBot({ myState }: any) {
       console.log("thing in array", message[i], typeof message[i]);
       if (message[i] != "0" && message[i] != "1" && message[i] != " ") {
         ChatLog.unshift({
-          message: `I don't understand, can you write that in binary? (0s, 1s & spaces)`,
+          message: `I don't understand. Can you write that in binary? (0s, 1s & spaces)`,
           from: "bot",
         }); //add user message to new array
         setChatBotStatus("Here to guild you");
         setcounter(counter + 1); //somehow this updates the state in a way that refreshs the comp... unlike the array
-        console.log("it's NOT binary!");
         // questionCounter += 1;
         return;
       } else {
       }
     }
-    console.log("it's binary!");
-
-    //
 
     ///////////////////
     // IT BINARY!
@@ -199,12 +196,14 @@ export default function FakeChatBot({ myState }: any) {
       <ChatWindow chatWindow={ChatLog} />
 
       <div className="write-message-container">
-        <input
-          id="text-input-chatbot"
-          type="text"
-          placeholder="Write a message"
-          autoComplete="off"
-        />
+        <form onSubmit={handleClickSend}>
+          <input
+            id="text-input-chatbot"
+            type="text"
+            placeholder="Write a message"
+            autoComplete="off"
+          />
+        </form>
         <img
           id="send-btn"
           className="send-btn-fakeChatBot"

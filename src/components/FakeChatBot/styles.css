@@ -261,3 +261,35 @@ input {
     font-size: small;
   }
 }
+
+@media only screen and (orientation: landscape) and  (max-height: 450px)   { 
+  #container-fakeChatBot {
+    height: 70%;
+    width: 230px;
+    bottom: -8px;
+  }
+  
+.chat-area-fakeChatBot {
+  height: 40%;
+  font-size: small;
+  
+}
+
+
+.profile-pic-fakeChatBot {
+  width: 26px;
+  height: 26px;
+}
+
+
+#open-close-fakeChatBot {
+  width: 14px;
+  height: 14px;
+  right: 15px;
+  top: 15px;
+}
+
+.username-fakeChatBot {
+  font-size: small;
+}
+}
