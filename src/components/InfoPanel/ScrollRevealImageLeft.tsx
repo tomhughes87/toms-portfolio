@@ -1,5 +1,5 @@
 import React from "react";
-import pic from "./patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
+// import pic from "./patrick-tomasso-QMDap1TAu0g-unsplash.jpg";
 import { AboutMeData } from "./AboutMeData/AboutMeData";
 import ProcessDataScrollRev from "./AboutMeData/ProcessDataScrollRev";
 
@@ -13,7 +13,7 @@ export default function ScrollRevealImageLeft() {
       {AboutMeData.map((section) => (
         <div id="container-scroll-reveal">
           <div id="sub-container-scroll-reveal">
-            <img className={classNameLeft} src={pic} alt="" />
+            <img className={classNameLeft} src={section.image} alt="" />
           </div>
           <div id="sub-container-scroll-reveal">
             <h1 id="testing-text" className={classNameRight}>

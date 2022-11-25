@@ -29,7 +29,7 @@ export default function InfoPanel() {
   return (
     <>
       <div id="testdiv-length">
-        <div id="container-scroll-reveal">
+        {/* <div id="container-scroll-reveal">
           <div id="sub-container-scroll-reveal">
             <img
               // id="img-scroll-reveal"
@@ -76,7 +76,7 @@ export default function InfoPanel() {
               Portfolio
             </button>
           </div>
-        </div>
+        </div> */}
 
         <ScrollRevealImageLeft />
         {/* </div> */}

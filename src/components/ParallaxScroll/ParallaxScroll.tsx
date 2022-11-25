@@ -15,6 +15,7 @@ import ImageOfMidCrane from "./imgs/imgMidCrane.png";
 import ImageOfOverlay from "./imgs/imgOverlay.png";
 
 import "./ParallaxScroll.css";
+import ScrollRevealImageLeft from "../InfoPanel/ScrollRevealImageLeft";
 
 export default function ParallaxScrolling() {
   return (
@@ -49,7 +50,9 @@ export default function ParallaxScrolling() {
           <h1 className="title-aboutme">About Me</h1>
         </header>
 
-        <div className="cover-parallax"></div>
+        <div className="cover-parallax">
+          <ScrollRevealImageLeft />
+        </div>
       </div>
     </>
   );
